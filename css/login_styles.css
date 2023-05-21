@@ -1,0 +1,41 @@
+.media-button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 50px;
+}
+.media-button:nth-child(1) {
+  background: #000000;
+}
+.media-button:nth-child(2) {
+  background: #0a3e4a;
+}
+.media-button:nth-child(3) {
+  background: #24292f;
+}
+.media-button:nth-child(4) {
+  background: #1ea1f1;
+}
+
+.separator-text {
+  color: rgb(64, 64, 64);
+  flex-grow: 0;
+  font-size: 14px;
+  margin: auto;
+  text-align: center;
+}
+
+.separator-line {
+  border-top: solid 2px lightgray;
+  flex-grow: 1;
+  min-width: 60px;
+}
+
+.color-primary {
+  color: rgb(64, 64, 64);
+}
+
+.password-forgotten {
+  font-size: 14px;
+  text-decoration: none;
+}/*# sourceMappingURL=login_styles.css.map */
