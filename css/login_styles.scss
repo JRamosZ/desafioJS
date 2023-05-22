@@ -72,3 +72,18 @@ $color-primary: rgb(64, 64, 64);
     gap: 7px;
     align-items: center;
 }
+
+#logInButton {
+    background: #3b49df !important;
+
+    &:hover {
+        background-color: #2f3ab2 !important;
+    }
+}
+
+#rememberMeCheck {
+    &:checked{
+        background-color: #3b49df;
+        border-color: #3b49df;
+    }
+}
