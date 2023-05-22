@@ -30,7 +30,6 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
@@ -40,7 +39,7 @@
     <div class="container-fluid">
         <div class="row d-flex gap-2 px-2">
             <div class="col d-none d-xl-block col-xl-1"></div>
-            <div class="col-12 col-md-9 col-xl-6 px-0">
+            <div class="col-12 col-md-8 col-xl-7 px-0">
                 <form class="py-3 px-5 border border-secondary border-1 border-opacity-25 border-bottom-0 top-round bg-white">
                     <button data-bs-toggle="mensaje" title="Use a ratio of 100:42 for best results." class="btn border border-secondary border-2 border-opacity-25 rounded-3 mb-1"  >Add a cover image
                     </button>
@@ -68,8 +67,8 @@
                     <button class="editor-button"><svg class="crayons-icon c-btn__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"></path></svg></button>
                 </div>
                 <form class="py-3 px-5 mb-4 border border-secondary border-1 border-opacity-25 border-top-0 bottom-round bg-white">
-                    <label for="postTags" class="form-label"></label>
-                    <textarea rows="8" type="text" id="postTags" class="p-0 m-0 form-control border-0 text-dark post-text" placeholder="Write your post here..."></textarea>
+                    <label for="postContent" class="form-label"></label>
+                    <textarea rows="8" type="text" id="postContent" class="p-0 m-0 form-control border-0 text-dark post-text" placeholder="Write your post here..."></textarea>
                 </form>
                 <div class="d-flex gap-2 mb-4">
                     <button id='publishButton' class="btn btn-primary">Publish</button>
@@ -78,8 +77,19 @@
                     <button class="editor-button">Revert new changes</button>
                 </div>
             </div>
-            <div style="background: yellow;" class="col d-none d-md-block col-md-2 col-xl-4">
-                3
+            <div class="col d-none d-md-block col-md-3 col-xl-3 p-0 m0">
+                <div id="popText1" class="">
+                    <p class="fw-semibold">Writing a Great Post Title</p>
+                    <p class="fw-light">Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence. Use keywords where appropriate to help ensure people can find your post by search.</p>
+                </div>
+                <div id="popText2" class="visually-hidden">
+                    <p class="fw-semibold">Tagging Guidelines</p>
+                    <p class="fw-light">Tags help people find your post. Think of tags as the topics or categories that best describe your post. Add up to four comma-separated tags per post. Combine tags to reach the appropriate subcommunities. Use existing tags whenever possible. Some tags, such as “help” or “healthydebate”, have special posting guidelines.</p>
+                </div>
+                <div id="popText3" class="visually-hidden">
+                    <p class="fw-semibold">Editor Basics</p>
+                    <p id="editorText" class="fw-light">Use <a href="">Markdown</a> to write and format posts. Commonly used syntax. Embed rich content such as Tweets, YouTube videos, etc. Use the complete URL: <span class="shadowed-text">{% embed https://... %}.</span> <a href="">See a list of supported embeds</a>. In addition to images for the post's content, you can also drag and drop a cover image.</p>
+                </div>
             </div>
         </div>
     </div>
