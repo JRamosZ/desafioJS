@@ -1,0 +1,98 @@
+.editor-bar {
+    background: #f9f9f9;
+    height: 55px;
+    @media (max-width: 768px) {
+        padding-left: 10px!important;
+    }
+}
+
+.editor-button {
+    background: none;
+    border: none;
+    border-radius: 6px;
+    height: 40px;
+    text-align: center;
+    width: auto;
+
+    &:hover {
+        background: #e6e7f7;
+        color: #2f3ab2;
+        fill: #2f3ab2;
+    }
+}
+
+.top-round {
+    border-radius: 8px 8px 0 0;
+    @media (max-width: 768px) {
+        padding-left: 10px!important;
+
+    }
+}
+
+.bottom-round {
+    border-radius: 0px 0px 8px 8px;
+    @media (max-width: 768px) {
+        padding-left: 10px!important;
+
+    }
+}
+
+.post-title {
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    @media (min-width: 850px) {
+        font-size: 50px;
+    }
+    &::placeholder {
+        color: #525252;
+    }
+}
+
+.form-control:focus {
+    box-shadow: none;
+} 
+
+.post-text {
+    font-family: 'Courier New';
+    font-size: 1.4rem;
+    resize: none;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+#publishButton {
+    background: #3b49df !important;
+    border-color: #3b49df;
+
+    &:hover {
+        background-color: #2f3ab2 !important;
+    }
+}
+
+#editorText {
+    & span {
+        background: lightgray;
+        font-family: 'Courier New';
+    }
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+#popText1 {
+    font-size: 13px;
+    margin-top: 120px;
+}
+
+#popText2 {
+    font-size: 13px;
+    margin-top: 190px;
+}
+
+#popText3 {
+    font-size: 13px;
+    margin-top: 350px;
+}
