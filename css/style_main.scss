@@ -14,9 +14,14 @@ width: 100%;
 }
 
 /* nav bar section */
+.container_all{
+    padding-top: 4.5rem;
+}
 .header-container{
     background-color: white;
     border-bottom: rgb(239, 239, 239) solid .1rem;
+    position: fixed;
+    z-index: 1;
 }
 .nav_bar{
     display: flex;
@@ -87,15 +92,15 @@ width: 100%;
     font-size: 1.8rem;
     display: none;
 }
-@media (max-width: 1607px) and (min-width: 0px) {
-
-}
 @media (max-width: 767px) and (min-width: 0px) {
     .nav_bar_search{
         display: none;
     }
     #hamburgerButton{
         display: block;
+    }
+    .nav_bar{
+        justify-content: space-between;
     }
 }
 /*navside section*/
@@ -195,7 +200,17 @@ width: 100%;
 }
 
 /*navside resposive*/
-@media (max-width: 1399px) and (min-width: 768px){
+@media (max-width: 1400px) and (min-width: 0px){
+    .section__navSide_section1{
+        gap: .9rem;
+        padding-left: 0rem;
+    }
+    .other{
+        padding-left: 0rem;
+    }
+    .section__navSide_section2{
+        padding-left: 0rem;
+    }
     .section__navSide_networks{
         display: flex;
         gap: 18px;  
@@ -204,6 +219,13 @@ width: 100%;
     }
     .section__navSide_tag {
         gap: 6rem;
+    }
+    .section__navSide_networks{ 
+        padding-left: 0rem;
+    }
+    .section__navSide_tag {
+        margin-left: 0rem;
+        gap: 7rem;
     }
 }
 @media (max-width: 991px) and (min-width: 768px){
@@ -374,7 +396,7 @@ width: 100%;
         z-index: 1;
         position: absolute;
         background-color: white;
-        height: 100%;
+        height: 107%;
         width: 20rem;
         left: 0%;
         top: 0%;
@@ -411,10 +433,10 @@ width: 100%;
 .menu_login{
     border: rgb(221, 219, 219) solid .5px;
     background-color: white;
-    left: 71.5%;
-    top: 5.4%;
+    left: 75%;
+    top: 5%;
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 20rem;
     width: 15rem;
@@ -443,36 +465,7 @@ width: 100%;
     font-size: .9rem;
 }
 /*menu login responsive*/
-@media (max-width: 887px) and (min-width: 0px){
-    .menu_login{
-        left: 65%;
-        top: 5.8%;
-    }
-}
-@media (max-width: 684px) and (min-width: 0px){
-    .menu_login{
-        left: 51%;
-        top: 5.8%;
-    }
-}
-@media (max-width: 488px) and (min-width: 0px){
-    .menu_login{
-        left: 43%;
-        top: 5.9%;
-    }
-}
-@media (max-width: 420px) and (min-width: 0px){
-    .menu_login{
-        left: 32%;
-        top: 5.9%;
-    }
-}
-@media (max-width: 352px) and (min-width: 0px){
-    .menu_login{
-        left: 23%;
-        top: 5.9%;
-    }
-}
+
 //* *//
 .all-icons a:hover{
     background-color: #f8f9fa;
