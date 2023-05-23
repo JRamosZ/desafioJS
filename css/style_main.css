@@ -72,6 +72,10 @@ body {
   font-size: 0.9rem;
 }
 
+.button__post:hover {
+  text-decoration: underline;
+}
+
 .icon__campaign {
   width: 2.1rem;
   cursor: pointer;
