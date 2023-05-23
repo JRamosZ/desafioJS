@@ -1,12 +1,22 @@
 /*hamburger botton*/ 
-function deployMenu() {
+function deployMenuNav() {
     let navlateral = document.querySelector("#navlateralOpen");
     let hamburgerBotton = document.querySelector("#hamburgerButton");
     hamburgerBotton.addEventListener("click", () => {
         navlateral.classList.toggle("d-none");
     });
 };
-deployMenu();
+deployMenuNav();
+
+/*close botton*/ 
+function closeMenuNav() {
+    let navlateral = document.querySelector("#navlateralOpen");
+    let closeBotton = document.querySelector("#navlateralClose");
+    closeBotton.addEventListener("click", () => {
+        navlateral.classList.add("d-none");
+    });
+};
+closeMenuNav();
 
 /*icon login botton*/
 function deployMenuLogin() {
