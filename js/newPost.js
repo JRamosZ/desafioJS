@@ -1,4 +1,5 @@
-const BASE_URL = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com/'
+const BASE_URL = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com'
+let userId = ''
 
 let textBlock1 = document.getElementById('popText1')
 let textBlock2 = document.getElementById('popText2')
@@ -22,11 +23,18 @@ document.getElementById('postContent').addEventListener('click', () => {
     textBlock3.classList = []
 })
 
-const getNewPostInputs = () => {
+const getNewPostInputs = async() => {
     let post = {}
     let inputs = document.querySelectorAll('input')
     inputs.forEach (item => {
-        post[item.id] = item.value
+        if (item.id === 'postTags') {
+            let list = item.value.split(" ").slice(0, 4)
+            post['postTags'] = list
+        } else if (item.id === 'postReadTime'){
+            post['postReadTime'] = Number(item.value)
+        } else {
+            post[item.id] = item.value
+        }
     })
     let postContent = document.querySelector('textarea')
     post[postContent.id] = postContent.value
@@ -36,7 +44,18 @@ const getNewPostInputs = () => {
             alert(`El campo ${key} está vacío`)
             return none
         }
-    } 
+    }
+    let date = new Date()
+    post['postDateDay'] = date.toDateString().split(" ").slice(2, 3)[0]
+    post['postDateMonth'] = date.toDateString().split(' ').slice(1,2)[0]
+
+    let relevance = Math.ceil(Math.random() * 10)
+    post['postRelevance'] = relevance
+
+    let userKey = getUserId()
+    let data = await getUserData(userKey)
+    post['postAuthor'] = `${data.userName} ${data.userLastname}`
+    console.log(post)
     return post
 }
 
@@ -47,13 +66,27 @@ const saveNewPost = async(post) => {
     });
 
     let data = await response.json();
+    console.log(data)
     return data;
 }
 
 let publishButton = document.getElementById('publishButton')
-publishButton.addEventListener('click', event => {
-    let post = getNewPostInputs()
+publishButton.addEventListener('click', async event => {
+    let post = await getNewPostInputs()
     post ? saveNewPost(post) : null
     alert('Post guardado con éxito')
-    window.location.replace('./index.html')
+    window.location.replace(`./index.html?userId=${userId}`)
 })
+
+const getUserId = () => {
+    let params = new URLSearchParams(document.location.search);
+    userId = params.get('userId')
+    return userId
+}
+
+const getUserData = async (userId) => {
+    let response = await fetch(`${BASE_URL}/users/${userId}.json`)
+    let data = await response.json()
+    console.log(data)
+    return data
+}
