@@ -9,29 +9,23 @@
     <link rel="stylesheet" href="css/style_main.css">
 </head>
 <body>
-    <header class="navbar navbar-expand-lg bg-white">
-        <div class="container-fluid">
-            <button class="hamburger navbar-toggler" type="button" id="hamburgerButton">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <a href="/index.html"><img class="logo__navbar__dev" src="assets/img_navbar/Logo dev.svg" alt=""/></a>
-                <a class="navbar-brand" href="#" ></a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <form class="sarch d-flex" role="search">
-                <div class="magnifyingGlass-wrapper">
-                    <input class="form-control me-6" type="search" placeholder="Search..." aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="magnifyingGlass-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-                        </svg>
-                </div>
-            </div>
-            <div class="conteiner-login">
-              <button class="button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
-              <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt=""/>
-              <button type="button" class="login__icon" id="login_icon_open"><img src="/assets/img_navbar/icon login.svg" alt=""></button>
-            </div>
+  <header class="header-container container-fluid">
+    <div class="nav_bar container-lg justify-content-between d-flex pt-2 pb-2 pe-3 ps-3">
+        <div class="nav_bar_conteriner_input">
+        <button id="hamburgerButton">☰</button>
+            <a href="/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt=""/></a>
+            <label>
+                <input class="nav_bar_search" type="search" placeholder=" Search...">
+            </label>  
+        </div>  
+        <div class="nav_bar_conteiner_login">
+            <button class="button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
+            <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt=""/>
+            <button type="button" class="login__icon" id="login_icon_open"><img src="/assets/img_navbar/icon login.svg" alt=""></button>
         </div>
-    </header>
+    </div>
+  </header>
+  <div class="menu_login_container container-lg position-relative"> 
     <div class="menu_login" id="menu_login_open">
         <a class="a_menu_login" href="">mail@gmail.com</a>
         <a class="a_menu_login">mail@gmail.com</a>
@@ -43,14 +37,15 @@
         <hr class="line_menu_login"/>
         <a class="a_menu_login">Sign Out</a>
     </div>
-    <main class="container-fluid bg-light">
+  </div> 
+    <main class="container_all container-fluid bg-light">
         <div class="container-lg pt-2">
             <div class="row">
                 <nav class="d-none d-md-block col-md-4 col-xl-3 " id="navlateralOpen">
                     <nav class="section__navSide">
                         <div class="title_mobile">
                             <p>Community</p>
-                            <button id="navlateralClose"><b>X</b></button>
+                            <button type="button" id="navlateralClose"><b>X</b></button>
                         </div>
                             <div class="section__navSide_section1">
                                 <a href=""><img src="/assets/img_nav/home.svg"alt="">Home</a>
