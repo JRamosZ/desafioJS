@@ -1,70 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.webp">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="../css/style_index_post.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../css/style_main.css">
 </head>
-
 <body>
     <header class="header-container container-fluid">
         <div class="nav_bar container-lg justify-content-between d-flex pt-2 pb-2 pe-3 ps-3">
             <div class="nav_bar_conteriner_input">
-                <button id="hamburgerButton">☰</button>
-                <a href="/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt="" /></a>
+            <button id="hamburgerButton">☰</button>
+                <a href="/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt=""/></a>
                 <label>
                     <input class="nav_bar_search" type="search" placeholder=" Search...">
-                </label>
-            </div>
+                </label>  
+            </div>  
             <div class="nav_bar_conteiner_login">
                 <button class="button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
-                <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt="" />
-                <!-- <button type="button" class="login__icon" id="login_icon_open"><img
-                        src="/assets/img_navbar/icon login.svg" alt=""></button> -->
-                <button type="button" class="login__icon btn dropdown-item shadow-large rounded pe-2 ps-2 mg-0" data-bs-toggle="dropdown" aria-expanded="false" id="login_icon_open">
-                    <img
-                        src="/assets/img_navbar/icon login.svg" alt="">
-                </button>
-                <ul class="login__icon__ul__drop dropdown-menu dropdown-menu-end border p-2 shadow-md">
-                    <li><button class="dropdown-item d-flex flex-column justify-content-between pt-2 pb-2 rounded" type="button"><p class="m-0"><strong>UserName</strong></p><p class="m-0">@username</p></button></li>
-                    <div></div>
-                    <li><button class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Create Post</a></button></li>
-                    <div></div>
-                    <li><button class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Sign Out</a></button></li>
-                </ul>
-                </div>
+                <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt=""/>
+                <button type="button" class="login__icon" id="login_icon_open"><img src="/assets/img_navbar/icon login.svg" alt=""></button>
             </div>
         </div>
     </header>
-    <!-- <div class="menu_login_container container-lg position-relative">
+   <!-- <div class="menu_login_container container-lg position-relative">
         <div class="menu_login" id="menu_login_open">
             <a class="a_menu_login" href="">mail@gmail.com</a>
             <a class="a_menu_login">mail@gmail.com</a>
-            <hr class="line_menu_login" />
+            <hr class="line_menu_login"/>
             <a class="a_menu_login">Dashboard</a>
             <a class="a_menu_login">Create Post</a>
             <a class="a_menu_login">Reading list</a>
             <a class="a_menu_login">Settings</a>
-            <hr class="line_menu_login" />
+            <hr class="line_menu_login"/>
             <a class="a_menu_login">Sign Out</a>
         </div>
-    </div> -->
+    </div>-->
     <main class="main-container container-lg">
         <div>
             <div class="d-flex flex-column-reverse flex-md-row">
                 <nav class="nav-left col-12 col-md-1 pe-0 pt-3 pb-3 position-sticky sticky-bottom sticky-md-top h-100">
                     <div class="p-1 rounded">
-                        <div
-                            class="nav-left d-flex flex-row flex-md-column justify-content-around align-content-center gap-2 text-center position-sticky sticky-top gap-5 rounded">
+                        <div class="nav-left d-flex flex-row flex-md-column justify-content-around align-content-center gap-2 text-center position-sticky sticky-top gap-5 rounded">
                             <a href="#"><span class="material-symbols-outlined heart">heart_plus</span>
                                 <!-- <p>96</p> -->
                             </a>
@@ -89,8 +70,8 @@
                                             src="https://randomuser.me/api/portraits/men/3.jpg" class="card-img-top"
                                             alt="img2-main-article" />
                                         <div>
-                                            <b id="author-name" class="post-card__author-name">Default Autor</b>
-                                            <p id="posted-date" class="post-card__posted-date">Default Date</p>
+                                            <b class="post-card__author-name">Madza</b>
+                                            <p class="post-card__posted-date">Posted on May 23</p>
                                         </div>
                                     </div>
                                     <!-- <div class="reactions d-flex flex-row justify-content-start gap-5 align-items-center mt-5 ms-5"> -->
@@ -114,29 +95,121 @@
                                     </div>
                                     <div class="post-card__card-content">
                                         <!--Este es el contenido de la card-->
-                                        <p id="postContent" class="text-paraghraps m-5">Default Contenido</p>
-
-
-                                        <div class="card-detail m-5"></div>
-                                        <h2 class="fs-3">
+                                        <p class="text-paraghraps mt-5 mb-5 ms-5 me-5">
+                                            <a href="#">VS Code</a> is a free, cross-platform, and
+                                            open-source code editor that has become the most popular
+                                            choice among developers in recent years.
+                                            <br />
+                                            <br />
+                                            It is well-known for its flexibility and customization
+                                            options, with a thriving ecosystem of extensions that can
+                                            extend its capabilities and make it even more powerful.
+                                            <br />
+                                            <br />
+                                            In this article, I've compiled some of the most useful
+                                            extensions that you can use to boost your productivity. I
+                                            will provide direct links, descriptions, and images so you
+                                            can get an initial impression on the fly.
+                                        </p>
+                                        <div class="card-detail m-5">
+                                            <h3>
+                                                1.
+                                                <a class="index" style="color: #3b49df; font-weight: bold" href="#">Swimm
+                                                </a>(Sponsored)
+                                            </h3>
+                                            <p class="text-paraghraps">
+                                                Create documentation with Swimm's rich text editor.
+                                                Document complex flows spanning multiple files and repos
+                                                with rich content that interact with the code and
+                                                automatically updates as you make changes.
+                                                <br />
+                                                <br />
+                                                Validate and update documentation locally and as part of
+                                                your CI workflow, fixing simple errors automatically and
+                                                only alerting you with significant changes.
+                                                <br />
+                                                <br />
+                                                Find the right documentation, at the right time — right
+                                                next to the relevant code. When you see a wave, that means
+                                                that documentation related to that particular section of
+                                                code exists.
+                                            </p>
+                                            <img src="img_main_article/main_text1.png" alt="img-main-text1" />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <h3>
+                                                2.
+                                                <a class="index" style="color: #3b49df; font-weight: bold"
+                                                    href="#">GitLens</a>
+                                            </h3>
+                                            <p class="text-paraghraps">
+                                                With GitLens, developers can gain better insight into
+                                                their codebase's history, authorship, and changes by
+                                                providing advanced visualizations and information about
+                                                Git repositories.
+                                                <br />
+                                                <br />
+                                                GitLens also offers a rich set of customization options,
+                                                as well as inline blame annotations, commit and diff
+                                                details, and even the ability to view and edit commit
+                                                messages without leaving the editor.
+                                            </p>
+                                            <img src="img_main_article/main_text2.png" alt="img-main-text2" />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <h3>
+                                                3.
+                                                <a class="index" style="color: #3b49df; font-weight: bold" href="#">Thunder
+                                                    Client</a>
+                                            </h3>
+                                            <p class="text-paraghraps">
+                                                Thunder Client is a lightweight Rest API client extension
+                                                for Visual Studio Code with simple & easy to use UI.
+                                                <br />
+                                                <br />
+                                                information about Git repositories.
+                                                <br />
+                                                <br />
+                                                Supports Collections and environment variables & GraphQL
+                                                queries, as well as script-less testing with a GUI-based
+                                                interface.
+                                                <br />
+                                                <br />
+                                                All the requested data is saved locally on your device.
+                                            </p>
+                                            <img src="img_main_article/main_text3.png " alt="img-main-text3" />
+                                            <p class="text-paraghraps">
+                                                <br />
+                                                <br />
+                                                Writing has always been my passion and it gives me
+                                                pleasure to help and inspire people. If you have any
+                                                questions, feel free to reach out!
+                                                <br />
+                                                <br />
+                                                Connect me on <a href="#">Twitter</a>,
+                                                <a href="#">Linkedin</a>, and <a href="#">Github</a>!
+                                                <br />
+                                                <br />
+                                                Visit my <a href="#">Blog</a> for more articles like this.
+                                            </p>
+                                        </div>
                                     </div>
-
                                     <div class="container-comments">
                                         <div class="dropdown">
-                                            <div
-                                                class="container__comments d-flex justify-content-between align-items-center">
+                                            <div class="container__comments d-flex justify-content-between">
                                                 <button class="btn dropdown-toggle mb-3" type="button"
                                                     id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
                                                     Top comments (49)
                                                 </button>
-                                                <button class="btn btn-light">Subscribe</button>
+                                                <button class="b2">Subscribe</button>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li>
                                                         <a class="dropdown-item d-flex flex-column" href="#">
                                                             <span>Top</span>
-                                                            <span class="text-muted">Most upvoted and relevant comments
-                                                                will
+                                                            <span class="text-muted">Most upvoted and relevant comments will
                                                                 be
                                                                 first</span>
                                                         </a>
@@ -158,103 +231,136 @@
                                                 </ul>
                                             </div>
                                         </div>
-
-                                    </div>
-                                    <div class="d-flex gap-3 align-items-start mb-3">
-                                        <img class="avatar-sm" src="https://randomuser.me/api/portraits/women/51.jpg"
-                                            alt="">
-                                        <div class="flex-grow-1">
-                                            <textarea name="" id="" cols="30" rows="10"
-                                                class="form-control w-100 mb-3"></textarea>
-                                            <div class="flex gap-3">
-                                                <button class="btn btn-dev-purple text-white">Submit</button>
-                                                <button class="btn btn-secondary">Preview</button>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="comments-box d-flex align-items-start gap-3 mb-3">
+                                                                <img src="https://randomuser.me/api/portraits/women/17.jpg"
+                                                                    alt="" class="avatar">
+                                                                <div class="form-group flex-grow-1">
+                                                                    <textarea name="" class="form-control" cols="30"
+                                                                        rows="10"
+                                                                        placeholder="Add to the discussion"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="comment-item d-flex align-items-start gap-3 flex-wrap">
+                                                                <img src="https://randomuser.me/api/portraits/women/18.jpg"
+                                                                    alt="" class="avatar">
+                                                                <div class="flex-grow-1">
+                                                                    <div class="card mb-1">
+                                                                        <div class="card-body">
+                                                                            <h3><b>Taufik Nurhidayat</b> <span
+                                                                                    class="text-muted fs-6">- Apr 2</span>
+                                                                            </h3>
+                                                                            <p>Lorem ipsum dolor sit amet consectetur
+                                                                                adipisicing elit. Odit, natus!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="reactions w-100 ps-5 ">
+                                                                        <span>2 likes</span>
+                                                                        <span>Reply</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-center gap-3 align-items-center">
-
+                                    <button type="button" class="btn btn-primary btn-sm">
+                                        Submit
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm">
+                                        Small button
+                                    </button>
+                                    <div
+                                        class="container-comments-footer d-flex gap-3 align-items-center justify-content-center mt-5">
                                         <a class="comments-footer__text" href="#">Code of Conduct</a>
                                         <p class="comments-footer__dot">.</p>
                                         <a class="comments-footer__text" href="#">Report abuse</a>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="card-devto m-5">
-                                    <p class="devto__text1">DEV Community</p>
-                                    <h5 class="devto__text2">
-                                        <a class="fs-3" href="#">Advice For Junior Developers</a>
-                                    </h5>
-                                    <img src="https://picsum.photos/500/250" class="card-img-top w-85 mx-auto d-block"
-                                        alt="img-card-devto" />
-                                    <p class="text-paraghraps mt-4">
-                                        Advice from a carrer of 15+ years for new and benigger
-                                        developers just getting started on their journey
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card final-card mb-5">
-                            <div class="card-body">
-                                <h3>Read next</h3>
+                            <div class="card mb-3">
                                 <div class="card-body">
-                                    <div class="author-data d-flex gap-3 align-items-center">
-                                        <img class="final-card__preview-image"
-                                            src="https://randomuser.me/api/portraits/men/83.jpg" class="card-img-top"
-                                            alt="img2-main-article" />
-                                        <div>
-                                            <a class="final-card__author-name" href="#">Best Crypto Tokens To Invest In
-                                                2023 for Crowdfunding Platforms</a>
-                                            <p class="final-card__posted-date text-muted">JessieTomaz - May 12</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="author-data d-flex gap-3 align-items-center">
-                                        <img class="final-card__preview-image"
-                                            src="https://randomuser.me/api/portraits/women/54.jpg" class="card-img-top"
-                                            alt="img2-main-article" />
-                                        <div>
-                                            <a class="final-card__author-name" href="#">View Transitions API</a>
-                                            <p class="final-card__posted-date text-muted">Andrew Bone -May 6</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="author-data d-flex gap-3 align-items-center">
-                                        <img class="final-card__preview-image"
-                                            src="https://randomuser.me/api/portraits/men/34.jpg" class="card-img-top"
-                                            alt="img2-main-article" />
-                                        <div>
-                                            <a class="final-card__author-name" href="#">How we implemented the card
-                                                animation in Appwrite Cloud
-                                                Public Beta</a>
-                                            <p class="final-card__posted-date text-muted">
-                                                Thomas G. Lopes - May 9
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="author-data d-flex gap-3 align-items-center">
-                                        <img class="final-card__preview-image"
-                                            src="https://randomuser.me/api/portraits/men/66.jpg" class="card-img-top"
-                                            alt="img2-main-article" />
-                                        <div>
-                                            <a class="final-card__author-name" href="#">AWS XRAY with FASTAPI</a>
-                                            <p class="final-card__posted-date text-muted">
-                                                Ashutosh Singh -Apr 12
-                                            </p>
-                                        </div>
+                                    <div class="card-devto">
+                                        <p class="devto__text1">DEV Community</p>
+                                        <h5 class="devto__text2">
+                                            <a href="#">Advice For Junior Developers</a>
+                                        </h5>
+                                        <img src="img_main_article/main_devto.jpeg" class="card-img-top"
+                                            alt="img-card-devto" />
+                                        <p class="text-paraghraps mt-4">
+                                            Advice from a carrer of 15+ years for new and benigger
+                                            developers just getting started on their journey
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+                            <div class="card final-card mb-5">
+                                <div class="card-body">
+                                    <h3>Read next</h3>
+                                    <div class="card-body">
+                                        <div class="author-data d-flex gap-3 align-items-center">
+                                            <img class="final-card__preview-image"
+                                                src="https://randomuser.me/api/portraits/men/83.jpg" class="card-img-top"
+                                                alt="img2-main-article" />
+                                            <div>
+                                                <a class="final-card__author-name" href="#">Best Crypto Tokens To Invest In
+                                                    2023 for Crowdfunding
+                                                    Platforms</a>
+                                                <p class="final-card__posted-date">
+                                                    JessieTomaz - May 12
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="author-data d-flex gap-3 align-items-center">
+                                            <img class="final-card__preview-image"
+                                                src="https://randomuser.me/api/portraits/women/54.jpg" class="card-img-top"
+                                                alt="img2-main-article" />
+                                            <div>
+                                                <a class="final-card__author-name" href="#">View Transitions API</a>
+                                                <p class="final-card__posted-date">Andrew Bone -May 6</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="author-data d-flex gap-3 align-items-center">
+                                            <img class="final-card__preview-image"
+                                                src="https://randomuser.me/api/portraits/men/34.jpg" class="card-img-top"
+                                                alt="img2-main-article" />
+                                            <div>
+                                                <a class="final-card__author-name" href="#">How we implemented the card
+                                                    animation in Appwrite Cloud
+                                                    Public Beta</a>
+                                                <p class="final-card__posted-date">
+                                                    Thomas G. Lopes - May 9
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="author-data d-flex gap-3 align-items-center">
+                                            <img class="final-card__preview-image"
+                                                src="https://randomuser.me/api/portraits/men/66.jpg" class="card-img-top"
+                                                alt="img2-main-article" />
+                                            <div>
+                                                <a class="final-card__author-name" href="#">AWS XRAY with FASTAPI</a>
+                                                <p class="final-card__posted-date">
+                                                    Ashutosh Singh -Apr 12
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </content>
                     <aside class="col-12 col-lg-4 p-0 ps-lg-3 pt-lg-3 pb-lg-3 d-flex flex-column gap-3">
                         <div class="aside d-flex flex-column gap-3 h-100">
@@ -264,7 +370,11 @@
                                     <h3 id="asideCard1AuthorName">Default Author</h3>
                                 </a>
                                 <button class="aside-card1__button btn rounded text-white" type="button">Follow</button>
+<<<<<<< HEAD
                                 <p id="asideCard1Description" class="aside-card1__userinfo1 p-0 m-0">Default description</p>
+=======
+                                <p id="asideCard1Description" class="aside-card1__userinfo1 p-0 m-0">I'll probably change the world with extraordinary inventions and enlightenment, but not sure yet. multillionaire of everything, rocknrolla, 7 Buddha rebirth.</p>
+>>>>>>> develop
                                 <div class="aside-card1__userinfo2">
                                     <p class="p-0 m-0"><strong>Location</strong></p>
                                     <p id="asideCard1Location" class="p-0 m-0 mb-1">Default location</p>
@@ -295,39 +405,24 @@
                                         <img src="https://picsum.photos/200" class="rounded">
                                         <h5>The DEV Team</h5>
                                     </div>
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="aside-card3__button__drop btn dropdown-item shadow-large rounded pe-2 ps-2"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <strong>...</strong>
-                                        </button>
-                                        <ul class="aside-card3__ul__drop dropdown-menu dropdown-menu-end border p-2">
-                                            <li><button
-                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
-                                                    type="button"><span
-                                                        class="material-symbols-outlined">error</span>What's a
-                                                    billboard?</button></li>
-                                            <li><button
-                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
-                                                    type="button"><span
-                                                        class="material-symbols-outlined">settings</span>Manage
-                                                    Preferences</a></button></li>
-                                            <div></div>
-                                            <li><button
-                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
-                                                    type="button"><span
-                                                        class="material-symbols-outlined">flag</span>Report
-                                                    billboard</a></button></li>
-                                        </ul>
-                                    </div>
+                                    <input type="checkbox" id="modal__input">
+                                    <label for="modal__input"><span class="material-symbols-outlined p-1 me-1">more_horiz</span>
+                                    </label>
+                                        <div class="aside-card3__top__modal">
+                                            <div class="aside-card3__top__modal__container rounded border d-flex flex-column">
+                                                <a href="#">
+                                                    <span class="material-symbols-outlined">error</span>What's a billboard?
+                                                </a>
+                                                <a href="#">
+                                                    <span class="material-symbols-outlined">settings</span>Manage Preferences</a>
+                                                <div></div>
+                                                <a href="#"><span class="material-symbols-outlined">flag</span>Report billboard</a>
+                                            </div>
+                                        </div>
                                 </div>
-                                <a href="#" class="aside-card3__anchor1"><img
-                                        src="https://www.talentia-software.com/wp-content/uploads/2020/05/Featured-image-Corp-12.png"
-                                        class="rounded w-100"></a>
+                                <a href="#" class="aside-card3__anchor1"><img src="https://www.talentia-software.com/wp-content/uploads/2020/05/Featured-image-Corp-12.png" class="rounded w-100"></a>
                                 <h3 class="mb-2">Did you Know? DEV relies on open source code!</h3>
-                                <p class="aside-card3__paragraph1 mb-3">Yes, that's correct. The code behind everything
-                                    is <strong>Forem</strong>, which you can find on <a href="https://github.com"
-                                        target="_blank">GitHub</a>. DEV is just one instance of Forem.</p>
+                                <p class="aside-card3__paragraph1 mb-3">Yes, that's correct. The code behind everything is <strong>Forem</strong>, which you can find on <a href="https://github.com" target="_blank">GitHub</a>. DEV is just one instance of Forem.</p>
                                 <p class="aside-card3__paragraph2 m-0">Open source is the future of social media.</p>
                             </div>
                         </div>
@@ -336,29 +431,57 @@
             </div>
         </div>
     </main>
-
+    
     <footer class="container-fluid">
         <div class="row">
             <div class="footer" class="col-12">
-                <p><a href="">DEV Community</a> — A constructive and inclusive social network for software developers.
-                    With you every step of your journey.</p>
-                <p><a href="">Home</a>· <a href="">Listings</a> · <a href="">Podcasts</a> · <a href="">Videos</a> · <a
-                        href="">Tags</a> · <a href="">FAQ</a> · <a href="">Forem</a> · <a href="">Shop</a> · <a
-                        href="">Sponsors</a> · <a href="">About</a> · <a href="">Contac</a> · <a href="">Guides</a> · <a
-                        href="">Software</a> · <a href="">comparisons</a></p>
+                <p><a href="">DEV Community</a> — A constructive and inclusive social network for software developers. With you every step of your journey.</p>
+                <p><a href="">Home</a>· <a href="">Listings</a> · <a href="">Podcasts</a> · <a href="">Videos</a> · <a href="">Tags</a> · <a href="">FAQ</a> · <a href="">Forem</a> · <a href="">Shop</a> · <a href="">Sponsors</a> · <a href="">About</a> · <a href="">Contac</a> · <a href="">Guides</a> · <a href="">Software</a> · <a href="">comparisons</a></p>
                 <p><a href="">Code of Conduct · Privacy Policy · Terms of use</a></p>
-                <p>Built on <a href="">Forem</a> — the <a href="">open source</a> software that powers <a
-                        href="">DEV</a> and other inclusive communities.</p>
+                <p>Built on <a href="">Forem</a> — the <a href="">open source</a> software that powers <a href="">DEV</a> and other inclusive communities.</p>
                 <p>Made with love and <a href="">Ruby on Rails</a>. DEV Community © 2016 - 2023.</p>
             </div>
         </div>
-    </footer>
+</footer>
+<nav class="section__navSide_post" id="navSide_post">
+    <div class="title_mobile_post">
+        <p>Community</p>
+        <button type="button" id="navlateralClose_post"><b>X</b></button>
+    </div>
+        <div class="section__navSide_section1_post">
+            <a href=""><img src="/assets/img_nav/home.svg"alt="">Home</a>
+            <a href=""><img src="/assets/img_nav/Readinglist.svg" alt="">Reading List</a>
+            <a href=""><img src="/assets/img_nav/listings.svg" alt="">Listings</a>
+            <a href=""><img src="/assets/img_nav/podcasts.svg" alt="">Podcasts</a>
+            <a href=""><img src="/assets/img_nav/video.svg" alt="">Videos</a>
+            <a href=""><img src="/assets/img_nav/tags.svg" alt="">Tags</a>
+            <a href=""><img src="/assets/img_nav/faq.svg" alt="">FAQ</a>
+            <a href=""><img src="/assets/img_nav/forem_shop.svg" alt="">Forem Shop</a>
+            <a href=""><img src="/assets/img_nav/sponsors.svg" alt="">Sponsors</a>
+            <a href=""><img src="/assets/img_nav/dev.svg" alt="">About</a>
+            <a href=""><img src="/assets/img_nav/contact.svg" alt="">Contact</a>
+            <a href=""><img src="/assets/img_nav/guides.svg" alt="">Guides</a>
+            <a href=""><img src="/assets/img_nav/comparisons.svg" alt="">Software comparisons</a>
+        </div>
+        <h1 class="other_post">Other</h1>
+        <div class="section__navSide_section2_post">
+            <a href=""><img src="/assets/img_nav/conduct.svg"alt="">Code of Conduct</a>
+            <a href=""><img src="/assets/img_nav/privacy.svg"alt="">Privacy Policy</a>
+            <a href=""><img src="/assets/img_nav/terms.svg"alt="">Terms of use</a>
+        </div>
+        <div class="section__navSide_networks_post">
+            <a><img src="/assets/img_nav/twiter.svg"alt=""></a>
+            <a><img src="/assets/img_nav/face.svg"alt=""></a>
+            <a><img src="/assets/img_nav/git.svg"alt=""></a>
+            <a><img src="/assets/img_nav/insta.svg"alt=""></a>
+            <a><img src="/assets/img_nav/twich.svg"alt=""></a>
+            <a><img src="/assets/img_nav/mastodon.svg"alt=""></a>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script src="../js/navBar.js"></script>
-    <script src="../js/index_post.js"></script>
+    <script src="/js/index_post.js"></script>
+    <script src="/js/main.js"></script>
 </body>
-
 </html>

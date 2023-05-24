@@ -28,4 +28,39 @@ function deployMenuLogin() {
 };
 deployMenuLogin();
 
+/**/ 
+const BASE_URL2 = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com'
+let userId = ''
 
+const getUserId = () => {
+    let params = new URLSearchParams(document.location.search);
+    userId = params.get('userId')
+    console.log(userId)
+    return userId
+}
+
+const getUserData = async (userId) => {
+    let response = await fetch(`${BASE_URL2}/users/${userId}.json`)
+    let data = await response.json()
+    return data
+}
+
+const printUserData = async () => {
+    getUserId()
+    let data = await getUserData(userId)
+    let user =  document.getElementById('userDropName')
+    user.textContent = `${data.userName} ${data.userLastname}`
+    let userNick = document.getElementById('userDropNick')
+    userNick.textContent = `@${data.userNickName}`
+    buttonsNewPostFunctionality()
+}
+console.log('aqui')
+printUserData()
+    
+const buttonsNewPostFunctionality = () => {
+    let createPostButtonList = document.querySelectorAll('.create-post')
+    createPostButtonList.forEach(item => {
+        item.addEventListener('click', (event) => {
+            window.location.replace(`newPost.html?userId=${userId}`)
+        })
+    })}

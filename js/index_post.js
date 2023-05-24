@@ -55,4 +55,28 @@ const fillUserCardData = async  () =>{
 
 fillUserCardData()
 
+/*nav side index post close-and-open*/
+function deployMenuNavPost() {
+    let navlateralPost = document.querySelector("#navSide_post");
+    let hamburgerBottonPost = document.querySelector("#hamburgerButton");
+    hamburgerBottonPost.addEventListener("click", () => {
+        navlateralPost.classList.toggle("openNavPost");
+    });
+};
+deployMenuNavPost();
+
+function closeMenuNavPost() {
+    let navlateralPost = document.querySelector("#navSide_post");
+    let hamburgerBottonPost = document.querySelector("#navlateralClose_post");
+    hamburgerBottonPost.addEventListener("click", () => {
+        navlateralPost.classList.toggle("openNavPost");
+    });
+};
+closeMenuNavPost();
+
+
+
+
+
+
 
