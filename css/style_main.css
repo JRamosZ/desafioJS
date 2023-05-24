@@ -598,6 +598,6 @@ body {
   font-size: 14px;
 }
 
-.post-card .card:nth-child(1) {
+.cardList:not(:first-of-type) .imgList {
   display: none;
 }/*# sourceMappingURL=style_main.css.map */
