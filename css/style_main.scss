@@ -679,8 +679,12 @@ font-size: 12px;
 
 }
 
-.post-card .card:nth-child(1){
-    display: none;
+.cardList{
+    &:not(:first-of-type){
+        .imgList{
+
+            display: none;
+        }
 }
 
-
+}
