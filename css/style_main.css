@@ -225,6 +225,26 @@ body {
   cursor: pointer;
 }
 
+.login__icon__ul__drop {
+  width: 250px;
+}
+
+.login__icon__ul__drop button {
+  color: #404040;
+}
+
+.login__icon__ul__drop div {
+  background: #c7c7c7;
+  height: 1px;
+  margin: 4px 0;
+  width: 100%;
+}
+
+@media (max-width: 576px) and (min-width: 0px) {
+  .login__icon__ul__drop {
+    width: 100vw;
+  }
+}
 /*navside resposive*/
 @media (max-width: 1400px) and (min-width: 0px) {
   .section__navSide_section1 {

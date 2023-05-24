@@ -20,20 +20,32 @@
         <div class="nav_bar container-lg justify-content-between d-flex pt-2 pb-2 pe-3 ps-3">
             <div class="nav_bar_conteriner_input">
                 <button id="hamburgerButton">☰</button>
-                <a href="/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt="" /></a>
+                <a href="/views/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt="" /></a>
                 <label>
                     <input class="nav_bar_search" type="search" placeholder=" Search...">
                 </label>
             </div>
             <div class="nav_bar_conteiner_login">
-                <button class="button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
+                <button class="create-post button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
                 <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt="" />
-                <button type="button" class="login__icon" id="login_icon_open"><img
-                        src="/assets/img_navbar/icon login.svg" alt=""></button>
+                <!-- <button type="button" class="login__icon" id="login_icon_open"><img
+                        src="/assets/img_navbar/icon login.svg" alt=""></button> -->
+                <button type="button" class="login__icon btn dropdown-item shadow-large rounded pe-2 ps-2 mg-0" data-bs-toggle="dropdown" aria-expanded="false" id="login_icon_open">
+                    <img
+                        src="/assets/img_navbar/icon login.svg" alt="">
+                </button>
+                <ul class="login__icon__ul__drop dropdown-menu dropdown-menu-end border p-2 shadow-md">
+                    <li><button class="dropdown-item d-flex flex-column justify-content-between pt-2 pb-2 rounded" type="button"><p class="m-0"><strong>UserName</strong></p><p class="m-0">@username</p></button></li>
+                    <div></div>
+                    <li><button class="create-post dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Create Post</a></button></li>
+                    <div></div>
+                    <li><button class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Sign Out</a></button></li>
+                </ul>
+                </div>
             </div>
         </div>
     </header>
-    <div class="menu_login_container container-lg position-relative">
+    <!-- <div class="menu_login_container container-lg position-relative">
         <div class="menu_login" id="menu_login_open">
             <a class="a_menu_login" href="">mail@gmail.com</a>
             <a class="a_menu_login">mail@gmail.com</a>
@@ -45,7 +57,7 @@
             <hr class="line_menu_login" />
             <a class="a_menu_login">Sign Out</a>
         </div>
-    </div>
+    </div> -->
     <main class="main-container container-lg">
         <div>
             <div class="d-flex flex-column-reverse flex-md-row">
