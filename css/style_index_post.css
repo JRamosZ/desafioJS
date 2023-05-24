@@ -183,66 +183,21 @@ body {
   margin: 0px 10px;
 }
 
-.aside-card3__top span {
-  border-radius: 6px;
-  color: #404040;
-  font-size: 1.4rem;
-}
-
-.aside-card3__top span:hover {
+.aside-card3__button__drop:hover {
   background: rgba(182, 182, 182, 0.1882352941);
   color: #404040;
   cursor: pointer;
   transition: 0.4s;
 }
 
-.aside-card3__top #modal__input {
-  display: none;
-}
-
-.aside-card3__top__modal {
-  opacity: 0;
-  position: absolute;
-  right: 10px;
-  top: 56px;
-  visibility: hidden;
-  z-index: 2;
-}
-
-#modal__input:checked ~ .aside-card3__top__modal {
-  opacity: 1;
-  visibility: visible;
-}
-
-.aside-card3__top__modal__container {
-  align-items: center;
-  background-color: white;
-  box-shadow: 1px 1px 5px 5px rgba(182, 182, 182, 0.1882352941);
-  padding: 6px;
-  width: 250px;
-}
-
-.aside-card3__top__modal__container a {
-  align-items: center;
-  border-radius: 6px;
+.aside-card3__ul__drop button {
   color: #404040;
-  display: flex;
-  gap: 5px;
-  padding: 7px;
-  text-decoration: none;
-  width: 100%;
 }
 
-.aside-card3__top__modal__container a:hover {
-  background: rgba(59, 73, 223, 0.1450980392);
-  color: #2f3ab2;
-  transition: 0.25s;
-}
-
-.aside-card3__top__modal__container div {
-  background: #555555;
+.aside-card3__ul__drop div {
+  background: #c7c7c7;
   height: 1px;
-  margin: 8px 0;
+  margin: 4px 0;
   width: 100%;
 }
 
