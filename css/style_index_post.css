@@ -585,4 +585,29 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 100%;
+}
+
+.colorparaghraps {
+  color: black;
+}
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.btn-dev-purple {
+  background: rgb(59, 73, 223);
+}
+.btn-dev-purple:hover {
+  background: rgb(47, 58, 178);
+}
+
+.content-heading {
+  font-size: 1.5rem;
+}
+.content-heading a {
+  text-decoration: underline;
+  color: rgb(59, 73, 223);
 }/*# sourceMappingURL=style_index_post.css.map */
