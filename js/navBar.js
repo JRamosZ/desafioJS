@@ -28,7 +28,7 @@ function deployMenuLogin() {
 };
 deployMenuLogin();
 
-
+/**/ 
 const BASE_URL2 = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com'
 let userId = ''
 
@@ -63,5 +63,4 @@ const buttonsNewPostFunctionality = () => {
         item.addEventListener('click', (event) => {
             window.location.replace(`newPost.html?userId=${userId}`)
         })
-    })
-}
+    })}
