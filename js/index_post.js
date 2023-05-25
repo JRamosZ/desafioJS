@@ -39,6 +39,7 @@ const fillUserCardData = async  () =>{
     let postId = getPostId ()
     let postData = await getPostData (postId)
     let userData = await getUserData(postData.postAuthorId)
+    console.log(userData)
     let authorPhoto = document.getElementById("asideCard1AuthorImg")
     authorPhoto.setAttribute("src", userData.userImage)
     let authorPostName = document.getElementById("asideCard1AuthorName")
@@ -71,7 +72,7 @@ const createCard2Aside = (userPost) => {
     let paragraph2 = document.createElement("p")
     paragraph2.classList.add("aside-card2__paragraph2")
     for(key in postTags){
-        let textParagraph2 = document.createTextNode(`#${key}`) 
+        let textParagraph2 = document.createTextNode(`#${postTags[key]} `) 
         paragraph2.appendChild(textParagraph2)
     }
 
@@ -98,10 +99,16 @@ const getAllPosts = async () =>{
 const printAllAnchors = async () =>{
     let allPosts = await getAllPosts()
     let asideCard2 = document.getElementById("asideCard2")
+    let asideCard2Author = document.getElementById("asideCard2Author")
+    let postId = getPostId()
+    let postData = await getPostData (postId)
+    asideCard2Author.textContent = postData.postAuthor
     for(key in allPosts){
-        let response = allPosts[key]
-        let card = createCard2Aside(response)
-        asideCard2.appendChild(card)
+        if (postData.postAuthor === allPosts[key].postAuthor) {
+            let response = allPosts[key]
+            let card = createCard2Aside(response)
+            asideCard2.appendChild(card)
+        }
     }
 }
 printAllAnchors()

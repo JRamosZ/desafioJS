@@ -12,33 +12,38 @@ background-color: rgb(242, 242, 242);
     z-index: 1;
     background-color: rgb(242, 242, 242);
 }
-.nav-left a{
-    text-decoration: none;
+.nav-left__drop__button_h1{
+  color:#555555;
 }
-.nav-left a span{
-    color:#555555;
-    margin: 0 auto;
-    padding: 0;
-    padding: 5px;
+.nav-left__drop__button_h1:hover{
+  color:red;
+  transition: .4s;
 }
-.nav-left a .heart:hover{
-    color:red;
+.nav-left__drop__button_h2{
+  color:#555555;
 }
-.nav-left a .mode_comment:hover{
-    color:orange;
+.nav-left__drop__button_h2:hover{
+  color:orange;
+  transition: .4s;
 }
-.nav-left a .bookmark:hover{
-    color:purple;
+.nav-left__drop__button_h3{
+  color:#555555;
 }
-.nav-left a .more_horiz:hover{
-    background: #96969630;
-    border-radius: 50%;
+.nav-left__drop__button_h3:hover{
+  color:purple;
+  transition: .4s;
 }
-.nav-left a p{
-    color:#555555;
-    font-size: .9rem;
-    margin: 5px auto;
-    padding: 0;
+.nav-left__drop__button_h4{
+  // background: #b6b6b630;
+  color:#555555;
+}
+.nav-left__drop__button_h4:hover{
+  color: #000000;
+  transition: .4s;
+}
+.nav-left__ul__drop {
+  color: #404040;
+  width: 240px;
 }
 // FIN NAV ARICLE LATERAL ........................................................................
 
@@ -70,7 +75,10 @@ background-color: rgb(242, 242, 242);
 .aside-card1__anchor1 h3:hover{
     color: #2f3ab2;
 }
-
+.nav-left__drop__div{
+  margin-right: 30px;
+  margin-left: 30px;
+}
 .aside-card1__button {
     background:#3b49df;
 }
