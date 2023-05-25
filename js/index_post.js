@@ -39,8 +39,8 @@ const fillUserCardData = async  () =>{
     let postId = getPostId ()
     let postData = await getPostData (postId)
     let userData = await getUserData(postData.postAuthorId)
-    // let authorPhoto = document.getElementById("asideCard1AuthorImg")
-    // authorPhoto.setAttribute("src", userData.userImage)
+    let authorPhoto = document.getElementById("asideCard1AuthorImg")
+    authorPhoto.setAttribute("src", userData.userImage)
     let authorPostName = document.getElementById("asideCard1AuthorName")
     authorPostName.textContent = `${userData.userName} ${userData.userLastname}`
     let authordescription = document.getElementById("asideCard1Description")
@@ -82,32 +82,35 @@ const createCard2Aside = (userPost) => {
     anchor.appendChild(paragraph1)
     anchor.appendChild(paragraph2)
 
-    // return anchor
+    return anchor
     
-    let asideCard2 = document.getElementById("asideCard2")
-    asideCard2.appendChild(anchor)
-    console.log(asideCard2)
-    return asideCard2
+    // let asideCard2 = document.getElementById("asideCard2")
+    // asideCard2.appendChild(anchor)
+    // console.log(asideCard2)
+    // return asideCard2
 }
+
 const getAllPosts = async () =>{
     let response = await fetch(`${BASE_URL}/posts/.json`)
     let postsData = await response.json()
     return postsData
 }
-const printAllAnchors = async (asideCard) =>{
-    let postId = getPostId ()
-    let postData = await getPostData (postId)
-    let userData = await getUserData(postData.postAuthorId)
-
-    let asideCard2 = document.getElementById(asideCard)
+const printAllAnchors = async () =>{
     let allPosts = await getAllPosts()
-    let filterPost = FuncionFiltrar
-    for(key in filterPost){
+    let asideCard2 = document.getElementById("asideCard2")
+    for(key in allPosts){
         let response = allPosts[key]
-        let card = createCard(response)
+        let card = createCard2Aside(response)
         asideCard2.appendChild(card)
     }
 }
+printAllAnchors()
+
+
+
+
+
+
 /*nav side index post close-and-open*/
 function deployMenuNavPost() {
     let navlateralPost = document.querySelector("#navSide_post");
