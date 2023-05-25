@@ -2,7 +2,7 @@
 const BASE_URL = "https://desafiojs-1edc9-default-rtdb.firebaseio.com"
 
 const createCard= (post)=>{
-  console.log(post)
+  
 let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle}=post
 
 let card = document.createElement("div")
@@ -145,3 +145,22 @@ const printAllPosts = async (listtId) =>{
 }
 
 printAllPosts("postCard")
+
+
+const searchFilter = (input, selector)=>{
+  document.addEventListener("keyup",(event) =>{
+    if(event.target.matches(input)){
+      console.log(event.target.value)
+
+      document.querySelectorAll(selector).forEach((item) => item.textContent.toLowerCase().includes(event.target.value.toLowerCase())
+      ?item.classList.remove("d-none")
+      :item.classList.add("d-none")
+
+      )
+    }
+  })
+
+}
+
+  searchFilter(".card-filter",".cardList")
+
