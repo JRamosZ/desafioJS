@@ -212,6 +212,10 @@ background-color: rgb(242, 242, 242);
 .aside-card3__paragraph2{
     color: #555555;
 }
+.card-img-top{
+  object-fit: cover;
+  max-height: 400px;
+}
 
 .post-card {
     &__preview-image {

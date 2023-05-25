@@ -1,8 +1,20 @@
 const BASE_URL3 = "https://desafiojs-1edc9-default-rtdb.firebaseio.com"
+let userId= ''
+
 const getPostId = () => {
     let params = new URLSearchParams(document.location.search);
     postId = params.get('postId')
     return postId
+}
+
+const getUsertId = () => {
+    let params = new URLSearchParams(document.location.search);
+    userId = params.get('userId')
+    if (userId === null) {
+        window.location.replace(`login.html`)
+    } else {
+        return userId
+    }
 }
 
 const getPostData = async (postId) => {
@@ -65,7 +77,7 @@ fillUserCardData()
 //     <p class="aside-card2__paragraph2">#wecoded&nbsp;&nbsp;#meta</p>
 // </a>
 
-const createCard2Aside = (userPost) => {
+const createCard2Aside = (userPost, postKey) => {
     let {postTitle, postTags}= userPost ;
 
     let paragraph1 = document.createElement("p")
@@ -74,19 +86,22 @@ const createCard2Aside = (userPost) => {
     paragraph1.appendChild(textParagraph1)
 
     let divTags = document.createElement("div")
-    let paragraph2 = document.createElement("p")
-    paragraph2.classList.add("aside-card2__paragraph2")
+    divTags.classList.add('d-flex')
     for(key in postTags){
+        let paragraph2 = document.createElement("p")
+        paragraph2.classList.add("aside-card2__paragraph2")
+        divTags.appendChild(paragraph2)
         let textParagraph2 = document.createTextNode(`#${postTags[key]} `) 
         paragraph2.appendChild(textParagraph2)
     }
-
+    divTags.classList.add('gap-3')
     let anchor = document.createElement("a")
+    user = userId
+    anchor.setAttribute('href', `index_post.html?userId=${user}&postId=${postKey}`)
     anchor.classList.add("aside-card2__anchor2")
-    anchor.setAttribute("href", "#")
 
     anchor.appendChild(paragraph1)
-    anchor.appendChild(paragraph2)
+    anchor.appendChild(divTags)
 
     return anchor
     
@@ -111,7 +126,7 @@ const printAllAnchors = async () =>{
     for(key in allPosts){
         if (postData.postAuthor === allPosts[key].postAuthor) {
             let response = allPosts[key]
-            let card = createCard2Aside(response)
+            let card = createCard2Aside(response, key)
             asideCard2.appendChild(card)
         }
     }

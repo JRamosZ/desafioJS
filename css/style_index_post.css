@@ -249,6 +249,12 @@ body {
   color: #555555;
 }
 
+.card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 400px;
+}
+
 .post-card__preview-image {
   width: 40px;
   height: 40px;
