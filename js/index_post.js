@@ -125,9 +125,11 @@ const printAllAnchors = async () =>{
     asideCard2Author.textContent = postData.postAuthor
     for(key in allPosts){
         if (postData.postAuthor === allPosts[key].postAuthor) {
-            let response = allPosts[key]
-            let card = createCard2Aside(response, key)
-            asideCard2.appendChild(card)
+            if (key != postId) {
+                let response = allPosts[key]
+                let card = createCard2Aside(response, key)
+                asideCard2.appendChild(card)
+            }
         }
     }
 }
