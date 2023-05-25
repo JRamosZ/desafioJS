@@ -22,8 +22,19 @@
             </div>  
             <div class="nav_bar_conteiner_login">
                 <button class="button__post btn btn-outline-primary" type="submit"><b>Create Post</b></button>
-                <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt=""/>
-                <button type="button" class="login__icon" id="login_icon_open"><img src="/assets/img_navbar/icon login.svg" alt=""></button>
+                <!-- <img class="icon__campaign" src="/assets/img_navbar/icon campaign.svg" alt=""/>
+                <button type="button" class="login__icon" id="login_icon_open"><img src="/assets/img_navbar/icon login.svg" alt=""></button> -->
+                <button type="button" class="login__icon btn dropdown-item shadow-large rounded pe-2 ps-2 mg-0" data-bs-toggle="dropdown" aria-expanded="false" id="login_icon_open">
+                    <img
+                        src="/assets/img_navbar/icon login.svg" alt="">
+                </button>
+                <ul class="login__icon__ul__drop dropdown-menu dropdown-menu-end border p-2 shadow-md">
+                    <li><button class="dropdown-item d-flex flex-column justify-content-between pt-2 pb-2 rounded" type="button"><p class="m-0"><strong>UserName</strong></p><p class="m-0">@username</p></button></li>
+                    <div></div>
+                    <li><button class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Create Post</a></button></li>
+                    <div></div>
+                    <li><button class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded" type="button">Sign Out</a></button></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -86,6 +97,7 @@
                                         <h2 id="titlePost" class="title1">
                                             Default Título
                                         </h2>
+                                        
                                         <div class="tags mt-4">
                                             <a href=""> <span>#</span>webdev</a>
                                             <a href=""> <span>#</span>vscode</a>
@@ -370,11 +382,7 @@
                                     <h3 id="asideCard1AuthorName">Default Author</h3>
                                 </a>
                                 <button class="aside-card1__button btn rounded text-white" type="button">Follow</button>
-<<<<<<< HEAD
                                 <p id="asideCard1Description" class="aside-card1__userinfo1 p-0 m-0">Default description</p>
-=======
-                                <p id="asideCard1Description" class="aside-card1__userinfo1 p-0 m-0">I'll probably change the world with extraordinary inventions and enlightenment, but not sure yet. multillionaire of everything, rocknrolla, 7 Buddha rebirth.</p>
->>>>>>> develop
                                 <div class="aside-card1__userinfo2">
                                     <p class="p-0 m-0"><strong>Location</strong></p>
                                     <p id="asideCard1Location" class="p-0 m-0 mb-1">Default location</p>
@@ -384,20 +392,16 @@
                                     <p id="asideCard1Joined" class="p-0 m-0 mb-1">Default joined date</p>
                                 </div>
                             </div>
-                            <div class="aside-card2 d-flex flex-column rounded border">
-                                <h3>More from <a href="#" class="aside-card2__anchor1">The DEV Team</a></h3>
-                                <a href="#" class="aside-card2__anchor2">
+                            <div class="aside-card2 d-flex flex-column rounded border" id="asideCard2">
+                                <h3>More from <a href="#" class="aside-card2__anchor1">Default Author</a></h3>
+                                <!-- <a href="#" class="aside-card2__anchor2">
                                     <p class="aside-card2__paragraph1">Join the WeCoded Virtual Meetup 🌟</p>
                                     <p class="aside-card2__paragraph2">#wecoded&nbsp;&nbsp;#meta</p>
                                 </a>
                                 <a href="#" class="aside-card2__anchor3">
                                     <p class="aside-card2__paragraph1">Join us for #WeCoded 2023!</p>
                                     <p class="aside-card2__paragraph2">#wecoded&nbsp;&nbsp;#meta</p>
-                                </a>
-                                <a href="#" class="aside-card2__anchor4">
-                                    <p class="aside-card2__paragraph1">Join the WeCoded Virtual Meetup</p>
-                                    <p class="aside-card2__paragraph2">#meta&nbsp;&nbsp;#forem</p>
-                                </a>
+                                </a> -->
                             </div>
                             <div class="aside-card3 d-flex flex-column rounded p-3 border position-sticky sticky-top">
                                 <div class="aside-card3__top d-flex justify-content-between">
@@ -405,20 +409,31 @@
                                         <img src="https://picsum.photos/200" class="rounded">
                                         <h5>The DEV Team</h5>
                                     </div>
-                                    <input type="checkbox" id="modal__input">
-                                    <label for="modal__input"><span class="material-symbols-outlined p-1 me-1">more_horiz</span>
-                                    </label>
-                                        <div class="aside-card3__top__modal">
-                                            <div class="aside-card3__top__modal__container rounded border d-flex flex-column">
-                                                <a href="#">
-                                                    <span class="material-symbols-outlined">error</span>What's a billboard?
-                                                </a>
-                                                <a href="#">
-                                                    <span class="material-symbols-outlined">settings</span>Manage Preferences</a>
-                                                <div></div>
-                                                <a href="#"><span class="material-symbols-outlined">flag</span>Report billboard</a>
-                                            </div>
-                                        </div>
+                                    <div class="btn-group">
+                                        <button type="button"
+                                            class="aside-card3__button__drop btn dropdown-item shadow-large rounded pe-2 ps-2"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <strong>...</strong>
+                                        </button>
+                                        <ul class="aside-card3__ul__drop dropdown-menu dropdown-menu-end border p-2">
+                                            <li><button
+                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                                    type="button"><span
+                                                        class="material-symbols-outlined">error</span>What's a
+                                                    billboard?</button></li>
+                                            <li><button
+                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                                    type="button"><span
+                                                        class="material-symbols-outlined">settings</span>Manage
+                                                    Preferences</a></button></li>
+                                            <div></div>
+                                            <li><button
+                                                    class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                                    type="button"><span
+                                                        class="material-symbols-outlined">flag</span>Report
+                                                    billboard</a></button></li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <a href="#" class="aside-card3__anchor1"><img src="https://www.talentia-software.com/wp-content/uploads/2020/05/Featured-image-Corp-12.png" class="rounded w-100"></a>
                                 <h3 class="mb-2">Did you Know? DEV relies on open source code!</h3>

@@ -7,8 +7,7 @@ const getPostId = () => {
 }
 
 const getPostData = async (postId) => {
-    // Let response = await fetch(`${BASE_URL}/posts/${postId}.json`) // ESTA LINEA ES LA BUENA
-    let response = await fetch(`https://javascript-25g-ba0a0-default-rtdb.firebaseio.com/postss/${postId}.json`) // ESTA LINEA ES DE PRUEBA
+    let response = await fetch(`${BASE_URL}/posts/${postId}.json`) // ESTA LINEA ES LA BUENA
     let data = await response.json()
     return data
 }
@@ -21,7 +20,9 @@ const getUserData = async (UserId) => {
 
 const fillAllData = async  () =>{
     let postId = getPostId ()
+    console.log(postId)
     let postData = await getPostData (postId)
+    console.log(postData)
     let nameAutor = document.getElementById ("author-name")
     nameAutor.textContent = postData.postAuthor
     let datePost = document.getElementById ("posted-date")
@@ -29,8 +30,7 @@ const fillAllData = async  () =>{
     let textPost = document.getElementById ("titlePost")
     textPost.textContent = postData.postTitle
     let contentPost = document.getElementById("postContent")
-    contentPost.textContent = postData.postContent
-    
+    contentPost.textContent = postData.postContent 
 }
 
 fillAllData ()
@@ -55,6 +55,59 @@ const fillUserCardData = async  () =>{
 
 fillUserCardData()
 
+// <!-- <a href="#" class="aside-card2__anchor2">
+//     <p class="aside-card2__paragraph1">Join the WeCoded Virtual Meetup 🌟</p>
+//     <p class="aside-card2__paragraph2">#wecoded&nbsp;&nbsp;#meta</p>
+// </a>
+
+const createCard2Aside = (userPost) => {
+    let {postTitle, postTags}= userPost ;
+
+    let paragraph1 = document.createElement("p")
+    paragraph1.classList.add("aside-card2__paragraph1")
+    let textParagraph1 = document.createTextNode(postTitle) 
+    paragraph1.appendChild(textParagraph1)
+
+    let paragraph2 = document.createElement("p")
+    paragraph2.classList.add("aside-card2__paragraph2")
+    for(key in postTags){
+        let textParagraph2 = document.createTextNode(`#${key}`) 
+        paragraph2.appendChild(textParagraph2)
+    }
+
+    let anchor = document.createElement("a")
+    anchor.classList.add("aside-card2__anchor2")
+    anchor.setAttribute("href", "#")
+
+    anchor.appendChild(paragraph1)
+    anchor.appendChild(paragraph2)
+
+    // return anchor
+    
+    let asideCard2 = document.getElementById("asideCard2")
+    asideCard2.appendChild(anchor)
+    console.log(asideCard2)
+    return asideCard2
+}
+const getAllPosts = async () =>{
+    let response = await fetch(`${BASE_URL}/posts/.json`)
+    let postsData = await response.json()
+    return postsData
+}
+const printAllAnchors = async (asideCard) =>{
+    let postId = getPostId ()
+    let postData = await getPostData (postId)
+    let userData = await getUserData(postData.postAuthorId)
+
+    let asideCard2 = document.getElementById(asideCard)
+    let allPosts = await getAllPosts()
+    let filterPost = FuncionFiltrar
+    for(key in filterPost){
+        let response = allPosts[key]
+        let card = createCard(response)
+        asideCard2.appendChild(card)
+    }
+}
 /*nav side index post close-and-open*/
 function deployMenuNavPost() {
     let navlateralPost = document.querySelector("#navSide_post");
