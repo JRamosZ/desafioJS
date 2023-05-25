@@ -367,6 +367,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   width: 300px;
+  margin-left: 0.3rem;
 }
 
 .section__navSide_sponsor_title2 p:nth-of-type(1) {
@@ -496,6 +497,10 @@ body {
   }
   .section__navSide_tag, .section__navSide_sponsor_title1, .section__navSide_sponsor_title2 {
     display: none;
+  }
+  body {
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 /*menu login*/
