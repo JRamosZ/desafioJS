@@ -79,7 +79,7 @@ publishButton.addEventListener('click', async event => {
     let post = await getNewPostInputs()
     post ? saveNewPost(post) : null
     alert('Post guardado con éxito')
-    window.location.replace(`../index.html?userId=${userId}`)
+    window.location.replace(`../views/index.html?userId=${userId}`)
 })
 
 const getUserId = () => {
@@ -94,3 +94,15 @@ const getUserData = async (userId) => {
     console.log(data)
     return data
 }
+
+let indexButton = document.getElementById('indexButton')
+indexButton.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+let closeNewPost = document.getElementById('closeNewPost')
+closeNewPost.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+getUserId()
