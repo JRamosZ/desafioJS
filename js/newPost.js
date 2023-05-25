@@ -94,3 +94,15 @@ const getUserData = async (userId) => {
     console.log(data)
     return data
 }
+
+let indexButton = document.getElementById('indexButton')
+indexButton.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+let closeNewPost = document.getElementById('closeNewPost')
+closeNewPost.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+getUserId()

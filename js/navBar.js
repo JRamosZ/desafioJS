@@ -18,24 +18,14 @@ function closeMenuNav() {
 };
 closeMenuNav();
 
-/*icon login botton*/
-function deployMenuLogin() {
-    let menuLogin = document.querySelector("#menu_login_open");
-    let loginBotton = document.querySelector("#login_icon_open");
-    loginBotton.addEventListener("click", () => {
-        menuLogin.classList.toggle("openMenuLogin");
-    });
-};
-deployMenuLogin();
 
 /**/ 
 const BASE_URL2 = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com'
-let userId = ''
+let userId2 = ''
 
-const getUserId = () => {
+const getUserId2 = () => {
     let params = new URLSearchParams(document.location.search);
     userId = params.get('userId')
-    console.log(userId)
     return userId
 }
 
@@ -45,17 +35,19 @@ const getUserData2 = async (userId) => {
     return data
 }
 
-const printUserData = async () => {
-    getUserId()
-    let data = await getUserData2(userId)
+const printUserData2 = async () => {
+    let userNumber = getUserId2()
+    let data = await getUserData2(userNumber)
     let user =  document.getElementById('userDropName')
     user.textContent = `${data.userName} ${data.userLastname}`
     let userNick = document.getElementById('userDropNick')
     userNick.textContent = `@${data.userNickName}`
+    let userProfilePicture = document.getElementById('userImgNavbar')
+    userProfilePicture.setAttribute('src', data.userImage)
     buttonsNewPostFunctionality()
 }
 
-printUserData()
+printUserData2()
     
 const buttonsNewPostFunctionality = () => {
     let createPostButtonList = document.querySelectorAll('.create-post')
@@ -65,11 +57,13 @@ const buttonsNewPostFunctionality = () => {
         })
     })}
 
-console.log('función')
 
 let indexButton = document.getElementById('indexButton')
-console.log(indexButton)
 indexButton.addEventListener('click', () => {
-    console.log('Salir')
-    window.location.replace(`../views/index.html?userId=${userId}`)
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+const signOutButton = document.getElementById('signOutButton')
+signOutButton.addEventListener('click', event => {
+  window.location.replace('login.html')
 })
