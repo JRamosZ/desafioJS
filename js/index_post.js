@@ -21,6 +21,8 @@ const fillAllData = async  () =>{
     let postId = getPostId ()
     let postData = await getPostData (postId)
     let userData = await getUserData(postData.postAuthorId)
+    let imagePost = document.getElementById("cardMainImagePost")
+    imagePost.setAttribute('src', postData.postImageURL)
     let nameAutor = document.getElementById ("author-name")
     nameAutor.textContent = postData.postAuthor
     let datePost = document.getElementById ("posted-date")
@@ -71,6 +73,7 @@ const createCard2Aside = (userPost) => {
     let textParagraph1 = document.createTextNode(postTitle) 
     paragraph1.appendChild(textParagraph1)
 
+    let divTags = document.createElement("div")
     let paragraph2 = document.createElement("p")
     paragraph2.classList.add("aside-card2__paragraph2")
     for(key in postTags){
