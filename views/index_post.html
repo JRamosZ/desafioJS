@@ -43,17 +43,69 @@
             <div class="d-flex flex-column-reverse flex-md-row">
                 <nav class="nav-left col-12 col-md-1 pe-0 pt-3 pb-3 position-sticky sticky-bottom sticky-md-top h-100">
                     <div class="p-1 rounded">
-                        <div class="nav-left d-flex flex-row flex-md-column justify-content-around align-content-center gap-2 text-center position-sticky sticky-top gap-5 rounded">
-                            <a href="#"><span class="material-symbols-outlined heart">heart_plus</span>
-                                <!-- <p>96</p> -->
-                            </a>
-                            <a href="#"><span class="material-symbols-outlined mode_comment">mode_comment</span>
-                                <!-- <p>23</p> -->
-                            </a>
-                            <a href="#"><span class="material-symbols-outlined bookmark">bookmark</span>
-                                <!-- <p>27</p> -->
-                            </a>
-                            <a href="#"><span class="material-symbols-outlined more_horiz">more_horiz</span></a>
+                        <div class="nav-left d-flex flex-row flex-md-column justify-content-around align-content-center text-center position-sticky sticky-top gap-5 rounded">
+                            <div class="btn-group dropend nav-left__drop__div text-center d-flex justify-content-around m-0">
+                                <button type="button" class="nav-left__drop__button_h1 btn border border-0 dropdown d-flex  align-content-center justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="material-symbols-outlined more_horiz m-0">heart_plus</span>
+                                </button>
+                                <ul class="nav-left__ul__drop_h dropdown-menu border shadow-lg p-0 m-0">
+                                    <li class="nav-left__li"><button
+                                        class="dropdown-item nav-left__icons d-flex justify-content-between p-3 rounded bg-light align-content-center"
+                                        type="button"><h4 class="m-0 p-0">💖&nbsp;&nbsp;🦄&nbsp;&nbsp; 🤯&nbsp;&nbsp; 🙌&nbsp;&nbsp; 🔥</h4></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropend nav-left__drop__div text-center d-flex justify-content-around m-0">
+                                <button type="button" class="nav-left__drop__button_h2 btn border border-0 dropdown d-flex  align-content-center justify-content-center " data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="material-symbols-outlined more_horiz m-0">mode_comment</span>
+                                </button>
+                            </div>
+                            <div class="btn-group dropend nav-left__drop__div text-center d-flex justify-content-around m-0">
+                                <button type="button" class="nav-left__drop__button_h3 btn border border-0 dropdown d-flex  align-content-center justify-content-center " data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="material-symbols-outlined more_horiz m-0">bookmark</span>
+                                </button>
+                            </div>
+                                
+                            <div class="btn-group dropend nav-left__drop__div text-center d-flex justify-content-around m-0">
+                                <button type="button" class="nav-left__drop__button_h4 btn border border-0 dropdown d-flex  align-content-center justify-content-center rounded-circle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="material-symbols-outlined more_horiz m-0">more_horiz</span>
+                                </button>
+                                <ul class="nav-left__ul__drop dropdown-menu p-2 border shadow-lg">
+                                    <li><button
+                                        class="aside-card3__button__drop dropdown-item d-flex justify-content-between pt-2 rounded"
+                                        type="button"><strong>Copy link</strong><span
+                                        class="material-symbols-outlined">edit_note</span></button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share to Twitter</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share to LinkedIn</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share to Reddit</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share to Facebook</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share to Mastodon</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Share Post via...</button>
+                                    </li>
+                                    <li><button
+                                        class="dropdown-item d-flex justify-content-between pt-2 pb-2 rounded"
+                                        type="button">Report Abuse</button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -61,19 +113,19 @@
                     <content class="col-12 col-lg-8 pt-3 pb-3 ">
                         <div class="aside d-flex flex-column gap-3">
                             <div class="card post-card mb-3 p-2 ">
-                                <img src="https://picsum.photos/300/100" class="card-img-top" alt="img1-main-article" />
+                                <img src="" class="card-img-top" alt="img1-main-article" id="cardMainImagePost"/>
                                 <div class="card-body">
                                     <div class="author-data d-flex gap-3 align-items-center mt-3 ms-3">
                                         <img id="authorImage" class="post-card__preview-image"
                                             src="" class="card-img-top"
-                                            alt="img2-main-article" />
+                                            alt="img2-main-article"/>
                                         <div>
                                             <b id="author-name" class="post-card__author-name">Default Autor</b>
                                             <p id="posted-date" class="post-card__posted-date">Default Date</p>
                                         </div>
                                     </div>
                                     <div
-                                        class="reactions d-flex flex-row justify-content-start gap-5 align-items-center mt-5 ms-5">
+                                        class="reactions d-flex flex-row justify-content-around gap-3 gap-sm-5 justify-content-sm-start align-items-center mt-5 ms-sm-5">
                                         <div>💖 134</div>
                                         <div>🦄 9</div>
                                         <div>🤯 4</div>
@@ -253,7 +305,7 @@
                                 </div>
                             </div>
                             <div class="aside-card2 d-flex flex-column rounded border" id="asideCard2">
-                                <h3>More from <a href="#" class="aside-card2__anchor1">Default Author</a></h3>
+                                <h3>More from <a href="#" class="aside-card2__anchor1" id="asideCard2Author">Default Author</a></h3>
                                 <!-- <a href="#" class="aside-card2__anchor2">
                                     <p class="aside-card2__paragraph1">Join the WeCoded Virtual Meetup 🌟</p>
                                     <p class="aside-card2__paragraph2">#wecoded&nbsp;&nbsp;#meta</p>
