@@ -36,6 +36,11 @@ body {
   border-radius: 10%;
 }
 
+#indexButton {
+  background-color: transparent;
+  border: none;
+}
+
 .nav_bar_search {
   height: 2.4rem;
   width: 26.2rem;
@@ -358,7 +363,7 @@ body {
   flex-direction: column;
   gap: 16px;
   height: 407px;
-  margin-top: 30px;
+  margin-top: 1.1rem;
   padding-left: 20px;
   padding-right: 20px;
   width: 300px;
@@ -460,12 +465,12 @@ body {
     z-index: 1;
     position: absolute;
     background-color: white;
-    height: 107%;
+    height: 100%;
     width: 20rem;
     left: 0%;
     top: 0%;
     padding: 1rem 0rem 0rem 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
   }
   .title_mobile {
     display: block;
@@ -539,12 +544,12 @@ body {
   z-index: 1;
   position: absolute;
   background-color: white;
-  height: 99%;
+  height: 100%;
   width: 20rem;
   left: 0%;
   top: 0%;
   padding: 1rem 0rem 0rem 2rem;
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
   display: none;
 }
 
@@ -760,4 +765,8 @@ body {
 
 .cardList:not(:first-of-type) .imgList {
   display: none;
+}
+
+.textPointer {
+  cursor: pointer;
 }/*# sourceMappingURL=style_main.css.map */
