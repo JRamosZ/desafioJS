@@ -14,7 +14,7 @@
     <div class="nav_bar container-lg justify-content-between d-flex pt-2 pb-2 pe-3 ps-3">
         <div class="nav_bar_conteriner_input">
         <button id="hamburgerButton">☰</button>
-            <a href="../views/index.html"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt=""/></a>
+            <button id='indexButton' type="button"><img class="logo__navbar__dev" src="/assets/img_navbar/Logo dev.svg" alt=""/></button>
             <label>
                 <input class="nav_bar_search card-filter" type="search" placeholder=" Search...">
             </label>  
@@ -111,9 +111,9 @@
                 </nav>
                 <content class="col-12 col-md-8 col-xl-6">
                   <div class="buttonName pb-2">
-                    <button type="button" class="btn "><b>Relevant </b> </button>
-                    <button type="button" class="btn ">Lastest</button>
-                    <button type="button" class="btn ">Top</button>
+                    <button id="relevantButton" type="button" class="btn "><b>Relevant </b> </button>
+                    <button id="latestButton" type="button" class="btn ">Lastest</button>
+                    <button id="topButton" type="button" class="btn ">Top</button>
                   </div>
                   <div class="post-card" id="postCard" >
  
@@ -210,7 +210,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="../js/navBar.js"></script>
+    <!-- <script src="../js/navBar.js"></script> -->
     <script src="../js/main.js"></script>
 </body>
 </html>

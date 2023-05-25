@@ -79,7 +79,7 @@ publishButton.addEventListener('click', async event => {
     let post = await getNewPostInputs()
     post ? saveNewPost(post) : null
     alert('Post guardado con éxito')
-    window.location.replace(`../index.html?userId=${userId}`)
+    window.location.replace(`../views/index.html?userId=${userId}`)
 })
 
 const getUserId = () => {

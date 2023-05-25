@@ -1,7 +1,14 @@
 
 const BASE_URL = "https://desafiojs-1edc9-default-rtdb.firebaseio.com"
+let userId = ''
 
-const createCard= (post)=>{
+const getUsertId = () => {
+  let params = new URLSearchParams(document.location.search);
+  userId = params.get('userId')
+  return userId
+}
+
+const createCard= (post, postId)=>{
   
 let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle}=post
 
@@ -37,6 +44,8 @@ pAuthor.appendChild(dateAuthor)
 
 let aTitle = document.createElement("a")
 aTitle.classList.add("ms-5","h4")
+let user = getUsertId()
+aTitle.setAttribute('href', `index_post.html?userId=${user}&postId=${postId}`)
 titleText = document.createTextNode(postTitle)
 aTitle.appendChild(titleText)
 
@@ -134,18 +143,92 @@ const getAllPosts = async () =>{
   return postsData
 }
 
-const printAllPosts = async (listtId) =>{
+const printAllPostsLatest = async (listtId) =>{
+  let postList = []
   let list = document.getElementById(listtId)
   let allPosts = await getAllPosts()
-  for(key in allPosts){
-    let response = allPosts[key]
-    let card = createCard(response)
-    list.appendChild(card)
+  for (key in allPosts){
+    postList.unshift(key)
   }
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+  postList.forEach( item => {
+    let response = allPosts[item]
+    let card = createCard(response, item)
+    list.appendChild(card)
+  })
 }
 
-printAllPosts("postCard")
+let latestButton = document.getElementById('latestButton')
+latestButton.addEventListener('click', event => {
+  printAllPostsLatest('postCard')
+})
 
+const printAllPostsRelevant = async(listtId) => {
+  let postList = []
+  let list = document.getElementById(listtId)
+  let allPosts = await getAllPosts()
+  let i = 0
+  for (key in allPosts){
+    postList.push(allPosts[key])
+    postList[i]['key'] = key
+    i++
+  }
+  postList.sort(function(a, b) {
+    a = a['postRelevance']
+    b = b['postRelevance']
+    return b-a
+  })
+
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+  postList.forEach (item => {
+    let card = createCard(item, item.key)
+    list.appendChild(card)
+  })
+}
+
+let relevantButton = document.getElementById('relevantButton')
+relevantButton.addEventListener('click', event => {
+  printAllPostsRelevant('postCard')
+})
+
+
+const printAllPostsTop = async(listtId) => {
+  let postList = []
+  let list = document.getElementById(listtId)
+  let allPosts = await getAllPosts()
+  let i = 0
+  for (key in allPosts){
+    postList.push(allPosts[key])
+    postList[i]['key'] = key
+    i++
+  }
+  postList.sort(function(a, b) {
+    a = a['postReadTime']
+    b = b['postReadTime']
+    return a-b
+  })
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+  postList.forEach (item => {
+    let card = createCard(item, item.key)
+    list.appendChild(card)
+  })
+}
+
+let topButton = document.getElementById('topButton')
+  topButton.addEventListener('click', event => {
+  printAllPostsTop('postCard')
+})
+
+printAllPostsRelevant("postCard")
+
+
+// const searchBar = ()
 
 const searchFilter = (input, selector)=>{
   document.addEventListener("keyup",(event) =>{
@@ -162,5 +245,7 @@ const searchFilter = (input, selector)=>{
 
 }
 
-  searchFilter(".card-filter",".cardList")
+searchFilter(".card-filter",".cardList")
+
+
 

@@ -11,7 +11,7 @@ deployMenuNav();
 /*close botton*/ 
 function closeMenuNav() {
     let navlateral = document.querySelector("#navlateralOpen");
-    let closeBotton = document.querySelector("#navlateralClose");
+    let closeBotton = document.querySelector("#navlateralClose_post");
     closeBotton.addEventListener("click", () => {
         navlateral.classList.add("d-none");
     });
@@ -39,7 +39,7 @@ const getUserId = () => {
     return userId
 }
 
-const getUserData = async (userId) => {
+const getUserData2 = async (userId) => {
     let response = await fetch(`${BASE_URL2}/users/${userId}.json`)
     let data = await response.json()
     return data
@@ -47,14 +47,14 @@ const getUserData = async (userId) => {
 
 const printUserData = async () => {
     getUserId()
-    let data = await getUserData(userId)
+    let data = await getUserData2(userId)
     let user =  document.getElementById('userDropName')
     user.textContent = `${data.userName} ${data.userLastname}`
     let userNick = document.getElementById('userDropNick')
     userNick.textContent = `@${data.userNickName}`
     buttonsNewPostFunctionality()
 }
-console.log('aqui')
+
 printUserData()
     
 const buttonsNewPostFunctionality = () => {
@@ -64,3 +64,12 @@ const buttonsNewPostFunctionality = () => {
             window.location.replace(`newPost.html?userId=${userId}`)
         })
     })}
+
+console.log('función')
+
+let indexButton = document.getElementById('indexButton')
+console.log(indexButton)
+indexButton.addEventListener('click', () => {
+    console.log('Salir')
+    window.location.replace(`../views/index.html?userId=${userId}`)
+})
