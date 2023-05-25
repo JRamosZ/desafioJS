@@ -36,6 +36,11 @@ body {
   border-radius: 10%;
 }
 
+#indexButton {
+  background-color: transparent;
+  border: none;
+}
+
 .nav_bar_search {
   height: 2.4rem;
   width: 26.2rem;
@@ -760,4 +765,8 @@ body {
 
 .cardList:not(:first-of-type) .imgList {
   display: none;
+}
+
+.textPointer {
+  cursor: pointer;
 }/*# sourceMappingURL=style_main.css.map */
