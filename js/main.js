@@ -1,21 +1,51 @@
 const BASE_URL = "https://desafiojs-1edc9-default-rtdb.firebaseio.com"
 let userId = ''
+let allPosts = []
 
 const getUsertId = () => {
   let params = new URLSearchParams(document.location.search);
   userId = params.get('userId')
   if (userId === null) {
     window.location.replace(`login.html`)
-  } else {
-    return userId
   }
 }
 
-getUsertId()
+const getAllPosts = async () =>{
+  let i = 0
+  let response = await fetch(`${BASE_URL}/posts/.json`)
+  postsList = await response.json()
+  for (key in postsList){
+    allPosts.push(postsList[key])
+    allPosts[i]['postKey'] = key
+    i++
+  }
+}
+
+const getAuthorData = async (authorId) => {
+  let author = await fetch(`https://desafiojs-1edc9-default-rtdb.firebaseio.com/users/${authorId}/.json`)
+  let authorData = await author.json()
+  return authorData
+}
+
+const insertAutorData = async () => {
+  for (post in allPosts) {
+    let postAuthor = await getAuthorData(allPosts[post]['postAuthorId'])
+    allPosts[post]['postAuthorImage'] = await postAuthor['userImage']
+  }
+}
+
+const starterFunction = async () => {
+  getUsertId()
+  await getAllPosts()
+  await insertAutorData()
+  printAllPostsRelevant("postCard")
+}
+
+starterFunction()
 
 const createCard= (post)=>{
   
-  let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle, postAuthorId, userImage, postKey}=post
+  let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle, postAuthorImage, postKey}=post
 
 
   let card = document.createElement("div")
@@ -32,7 +62,7 @@ const createCard= (post)=>{
   divData.classList.add("data-name")
 
   let imgAuthor = document.createElement("img")
-  imgAuthor.setAttribute("src",userImage)
+  imgAuthor.setAttribute("src",postAuthorImage)
   imgAuthor.classList.add("card-img-top","img-circle")
 
   let divAuthor = document.createElement("div")
@@ -141,34 +171,15 @@ const createCard= (post)=>{
   return card
 }
 
-
-const getAllPosts = async () =>{
-  let response = await fetch(`${BASE_URL}/posts/.json`)
-  let postsData = await response.json()
-  let completeData = []
-  for( key in postsData){
-    let postKey = key
-    let authorKey = postsData[key].postAuthorId
-    let author = await fetch(`https://desafiojs-1edc9-default-rtdb.firebaseio.com/users/${authorKey}/.json`)
-    let authorData = await author.json()
-    completeData.push({...postsData[key],...authorData, postKey})
-  }
-  return completeData
-}
-
-const printAllPostsLatest = async (listtId) =>{
-  let postList = []
+const printAllPostsLatest = (listtId) =>{
+  let latestList = allPosts.slice()
   let list = document.getElementById(listtId)
-  let allPosts = await getAllPosts()
-  for (key in allPosts){
-    postList.unshift(key)
-  }
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  postList.forEach(item => {
-    let response = allPosts[item]
-    let card = createCard(response, item)
+  latestList.reverse()
+  latestList.forEach(item => {
+    let card = createCard(item)
     list.appendChild(card)
   })
 }
@@ -178,25 +189,19 @@ latestButton.addEventListener('click', event => {
   printAllPostsLatest('postCard')
 })
 
-const printAllPostsRelevant = async(listtId) => {
-  let postList = []
+const printAllPostsRelevant = (listtId) => {
+  let relevantList = allPosts.slice()
   let list = document.getElementById(listtId)
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  let allPosts = await getAllPosts()
-  let i = 0
-  for (key in allPosts){
-    postList.push(allPosts[key])
-    postList[i]['key'] = key
-    i++
-  }
-  postList.sort(function(a, b) {
+
+  relevantList.sort(function(a, b) {
     return b.postRelevance-a.postRelevance
   })
 
-  postList.forEach ((item) => {
-    let card = createCard(item, item.key)
+  relevantList.forEach ((item) => {
+    let card = createCard(item)
     list.appendChild(card)
   })
 }
@@ -208,15 +213,8 @@ relevantButton.addEventListener('click', event => {
 
 
 const printAllPostsTop = async(listtId) => {
-  let postList = []
+  let postList = allPosts.slice()
   let list = document.getElementById(listtId)
-  let allPosts = await getAllPosts()
-  let i = 0
-  for (key in allPosts){
-    postList.push(allPosts[key])
-    postList[i]['key'] = key
-    i++
-  }
   postList.sort(function(a, b) {
     return a.postReadTime - b.postReadTime
   })
@@ -224,7 +222,7 @@ const printAllPostsTop = async(listtId) => {
     list.removeChild(list.firstChild);
   }
   for( let i = 0; i < postList.length; i++){
-    let card = createCard(postList[i], postList[i].key)
+    let card = createCard(postList[i])
     list.appendChild(card)
   }
   /*postList.forEach (async (item) => {
@@ -238,11 +236,7 @@ let topButton = document.getElementById('topButton')
   printAllPostsTop('postCard')
 })
 
-const initFunction = async () => {
-  let initVariable = await printAllPostsRelevant("postCard")
-}
 
-initFunction()
 
 // const searchBar = ()
 
@@ -264,18 +258,19 @@ searchFilter(".card-filter",".cardList")
 
 // Relevant más reciente
 
-const relevantLatest = async() => {
-  let i = 0
-  let post = {}
-  let allPosts = await getAllPosts()
-  for (key in allPosts) {
-    post = 
-    allPosts[key]['postRelevant'] >= i ?
-    post = allPosts[key] : null
-    // i = i = allPosts[key][postRelevant]
-  }
-  // console.log(post)
-} 
+// const relevantLatest = async() => {
+//   let i = 0
+//   let postList2 = []
+//   let allPosts = await getAllPosts()
+//   for (key in allPosts) {
+//     postList2.push(allPosts[key])
+//   }
+//   postList2.forEach(item=> {
+//     console.log(item)
+//   })
+// } 
+
+// relevantLatest()
 
 // Hashtags
 
@@ -317,3 +312,4 @@ const createHashtag =(post, key, fatherId)=>{
 }
 
 createHashtagsItems()
+
