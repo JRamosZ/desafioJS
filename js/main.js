@@ -238,8 +238,11 @@ let topButton = document.getElementById('topButton')
   printAllPostsTop('postCard')
 })
 
-printAllPostsRelevant("postCard")
+const initFunction = async () => {
+  let initVariable = await printAllPostsRelevant("postCard")
+}
 
+initFunction()
 
 // const searchBar = ()
 
@@ -293,7 +296,7 @@ const getHashtagPosts = async (hashtag) => {
 const createHashtagsItems = async () => {
   let hashtagsList1 = await getHashtagPosts('code')
   let hashtagsList2 = await getHashtagPosts('development')
-  for(key in hashtagsList1) {
+  for (key in hashtagsList1) {
     createHashtag(hashtagsList1[key], key, 'hashList1')
   }
   for(key in hashtagsList2) {
