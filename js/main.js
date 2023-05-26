@@ -215,6 +215,11 @@ const printAllPostsLatest = (listtId) =>{
 let latestButton = document.getElementById('latestButton')
 latestButton.addEventListener('click', event => {
   printAllPostsLatest('postCard')
+  event.target.classList.add('fw-bold')
+  let topButton = document.getElementById('topButton')
+  topButton.classList.remove('fw-bold')
+  let relevantButton = document.getElementById('relevantButton')
+  relevantButton.classList.remove('fw-bold')
 })
 
 const printAllPostsRelevant = (listtId) => {
@@ -235,8 +240,14 @@ const printAllPostsRelevant = (listtId) => {
 }
 
 let relevantButton = document.getElementById('relevantButton')
+relevantButton.classList.add('fw-bold')
 relevantButton.addEventListener('click', event => {
   printAllPostsRelevant('postCard')
+  event.target.classList.add('fw-bold')
+  let topButton = document.getElementById('topButton')
+  topButton.classList.remove('fw-bold')
+  let latestButton = document.getElementById('latestButton')
+  latestButton.classList.remove('fw-bold')
 })
 
 
@@ -258,6 +269,11 @@ const printAllPostsTop = async(listtId) => {
 let topButton = document.getElementById('topButton')
   topButton.addEventListener('click', event => {
   printAllPostsTop('postCard')
+  event.target.classList.add('fw-bold')
+  let latestButton = document.getElementById('latestButton')
+  latestButton.classList.remove('fw-bold')
+  let relevantButton = document.getElementById('relevantButton')
+  relevantButton.classList.remove('fw-bold')
 })
 
 
