@@ -51,7 +51,7 @@ const createCard= (post)=>{
 
 
   let card = document.createElement("div")
-  card.classList.add("w-100", "cardList","mb-3", "border", "rounded")
+  card.classList.add("w-100", "cardList","mb-2", "border", "rounded")
 
   let imgCard= document.createElement("img")
   imgCard.setAttribute("src",postImageURL)
