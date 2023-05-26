@@ -45,18 +45,18 @@ starterFunction()
 
 const createCard= (post)=>{
   
-  let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle, postAuthorImage, postKey}=post
+  let {postAuthor,postDateDay,postDateMonth,postImageURL,postTitle, postAuthorImage, postKey, postTags, postReadTime}= post
 
 
   let card = document.createElement("div")
-  card.classList.add("w-100", "cardList","mb-2")
+  card.classList.add("w-100", "cardList","mb-3", "border", "rounded")
 
   let imgCard= document.createElement("img")
   imgCard.setAttribute("src",postImageURL)
   imgCard.classList.add("card-img-top","w-100","imgList")
 
   let divCard = document.createElement("div")
-  divCard.classList.add("card", "ps-3", "border", "border-secondary-subtle","pb-3")
+  divCard.classList.add("card", "ps-3", "border-0","pb-3")
 
   let divData = document.createElement("div")
   divData.classList.add("data-name")
@@ -86,23 +86,34 @@ const createCard= (post)=>{
   aTitle.appendChild(titleText)
 
   let divHashtag = document.createElement("div")
-  divHashtag.classList.add("d-flex", "gap-2", "hashtag","py-2")
+  divHashtag.classList.add("d-flex", "hashtag","py-2")
+  for(key in postTags){
+    let span = document.createElement("span")
+    // paragraph2.classList.add("aside-card2__paragraph2")
+    divHashtag.appendChild(span)
+    let textSpan = document.createTextNode(`#${postTags[key]} `) 
+    span.appendChild(textSpan)
+  }
+  divHashtag.classList.add("gap-3")
 
   let spanReact = document.createElement("span")
   let spanJavascript = document.createElement("span")
   let spanNextjs = document.createElement("span")
   let spanProgramming = document.createElement("span")
 
-  let textReact = document.createTextNode("#React")
-  let textJavascript = document.createTextNode("#Javascript")
-  let textNextjs = document.createTextNode("#Nextjs")
-  let textProgramming = document.createTextNode("#Programming")
+  let textReact = document.createTextNode("")
+  let textJavascript = document.createTextNode("")
+  let textNextjs = document.createTextNode("")
+  let textProgramming = document.createTextNode("")
   ///////////////////////////////////////////////////////////
   let divSpan = document.createElement("div")
   divSpan.classList.add("d-flex", "justify-content-between", "px-lg-5", "px-md-4", "px-sm-2", "align-items-center", "flex-wrap")
 
   let spanContainer = document.createElement("span")
   spanContainer.classList.add("icons_container")
+
+  let spanContainer2 = document.createElement("span")
+  spanContainer2.classList.add("readTime_container")
 
   let spanReaction = document.createElement("span")
   spanReaction.classList.add("reactions","px-2")
@@ -119,6 +130,19 @@ const createCard= (post)=>{
   pathComments.setAttribute("d","M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z")
 
   let aCommentText= document.createTextNode("12 Comments")
+
+  let aReadTime = document.createElement("a")
+  aReadTime.classList.add("d-flex", "text-decoration-none", "text-secondary", "align-items-center", "gap-1")
+  let spanReadTime = document.createElement("span")
+  let spanReadTimeText = document.createTextNode(`${postReadTime} min`)
+  spanReadTime.appendChild(spanReadTimeText)
+  let spanReadTimeSimbol = document.createElement("span")
+  spanReadTimeSimbol.classList.add("material-symbols-outlined")
+  let spanReadTimeTextSimbol = document.createTextNode("bookmark")
+  spanReadTimeSimbol.appendChild(spanReadTimeTextSimbol)
+  aReadTime.appendChild(spanReadTime)
+  aReadTime.appendChild(spanReadTimeSimbol)
+
 
   let spanIcon = document.createElement("span")
   let imgIcon = document.createElement("img")
@@ -155,7 +179,9 @@ const createCard= (post)=>{
   svgComments.appendChild(pathComments)
   aComments.append(svgComments,aCommentText)
   spanContainer.append(spanIcon,spanReaction,aComments)
+  spanContainer2.append(aReadTime)
   divSpan.appendChild(spanContainer)
+  divSpan.appendChild(spanContainer2)
 
   spanReact.appendChild(textReact)
   spanJavascript.appendChild(textJavascript)
