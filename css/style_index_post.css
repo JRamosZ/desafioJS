@@ -13,39 +13,45 @@ body {
   background-color: rgb(242, 242, 242);
 }
 
-.nav-left a {
-  text-decoration: none;
-}
-
-.nav-left a span {
+.nav-left__drop__button_h1 {
   color: #555555;
-  margin: 0 auto;
-  padding: 0;
-  padding: 5px;
 }
 
-.nav-left a .heart:hover {
+.nav-left__drop__button_h1:hover {
   color: red;
+  transition: 0.4s;
 }
 
-.nav-left a .mode_comment:hover {
-  color: orange;
-}
-
-.nav-left a .bookmark:hover {
-  color: purple;
-}
-
-.nav-left a .more_horiz:hover {
-  background: rgba(150, 150, 150, 0.1882352941);
-  border-radius: 50%;
-}
-
-.nav-left a p {
+.nav-left__drop__button_h2 {
   color: #555555;
-  font-size: 0.9rem;
-  margin: 5px auto;
-  padding: 0;
+}
+
+.nav-left__drop__button_h2:hover {
+  color: orange;
+  transition: 0.4s;
+}
+
+.nav-left__drop__button_h3 {
+  color: #555555;
+}
+
+.nav-left__drop__button_h3:hover {
+  color: purple;
+  transition: 0.4s;
+}
+
+.nav-left__drop__button_h4 {
+  color: #555555;
+}
+
+.nav-left__drop__button_h4:hover {
+  color: #000000;
+  transition: 0.4s;
+}
+
+.nav-left__ul__drop {
+  color: #404040;
+  width: 240px;
 }
 
 .aside-card1 {
@@ -78,6 +84,11 @@ body {
 
 .aside-card1__anchor1 h3:hover {
   color: #2f3ab2;
+}
+
+.nav-left__drop__div {
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .aside-card1__button {
@@ -131,11 +142,12 @@ body {
 }
 
 .aside-card2__paragraph1 {
+  font-size: 1rem;
   margin: 0 0 15px 0;
 }
 
 .aside-card2__paragraph2 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin: 0;
 }
 
@@ -237,6 +249,12 @@ body {
   color: #555555;
 }
 
+.card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 400px;
+}
+
 .post-card__preview-image {
   width: 40px;
   height: 40px;
@@ -257,7 +275,6 @@ body {
 }
 
 .title1 {
-  font-size: 48px;
   font-weight: bolder;
 }
 

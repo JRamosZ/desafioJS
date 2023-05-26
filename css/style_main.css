@@ -4,7 +4,7 @@
 
 html,
 body {
-  background-color: rgb(242, 242, 242);
+  background-color: #f5f5f5 !important;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   height: 100%;
@@ -34,6 +34,11 @@ body {
 .logo__navbar__dev {
   width: 2.9rem;
   border-radius: 10%;
+}
+
+#indexButton {
+  background-color: transparent;
+  border: none;
 }
 
 .nav_bar_search {
@@ -358,10 +363,11 @@ body {
   flex-direction: column;
   gap: 16px;
   height: 407px;
-  margin-top: 30px;
+  margin-top: 0.8rem;
   padding-left: 20px;
   padding-right: 20px;
   width: 300px;
+  margin-left: 0.3rem;
 }
 
 .section__navSide_sponsor_title2 p:nth-of-type(1) {
@@ -460,12 +466,12 @@ body {
     z-index: 1;
     position: absolute;
     background-color: white;
-    height: 107%;
+    height: 100%;
     width: 20rem;
     left: 0%;
     top: 0%;
     padding: 1rem 0rem 0rem 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
   }
   .title_mobile {
     display: block;
@@ -491,6 +497,10 @@ body {
   }
   .section__navSide_tag, .section__navSide_sponsor_title1, .section__navSide_sponsor_title2 {
     display: none;
+  }
+  body {
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 }
 /*menu login*/
@@ -534,7 +544,147 @@ body {
   font-size: 0.9rem;
 }
 
-/*menu login responsive*/
+/*nav side index post*/
+.section__navSide_post {
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 20rem;
+  left: 0%;
+  top: 0%;
+  padding: 1rem 0rem 0rem 2rem;
+  box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.title_mobile_post {
+  display: flex;
+  font-weight: bold;
+  padding-right: 1rem;
+  justify-content: space-between;
+  align-content: center;
+  height: 1rem;
+  margin-bottom: 2rem;
+}
+
+#navlateralClose_post {
+  border: none;
+  background: none;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.section__navSide_section1_post {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 0rem;
+}
+
+.section__navSide_section1_post a {
+  align-items: center;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.section__navSide_section1_post img {
+  width: 1.3rem;
+}
+
+.section__navSide_section1_post a:hover {
+  background-color: rgb(236, 236, 254);
+  border-radius: 7px;
+  color: blue;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.other_post {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  padding-left: 0rem;
+}
+
+.section__navSide_section2_post {
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+  margin-top: 0.9rem;
+  padding-left: 0rem;
+}
+
+.section__navSide_section2_post img {
+  width: 1.3rem;
+}
+
+.section__navSide_section2_post a {
+  align-items: center;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+  gap: 0.9rem;
+}
+
+.section__navSide_section2_post a:hover {
+  background-color: rgb(236, 236, 254);
+  border-radius: 7px;
+  color: blue;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.section__navSide_networks_post {
+  display: flex;
+  gap: 18px;
+  padding-top: 42px;
+  margin-left: 0rem;
+}
+
+.section__navSide_networks_post a:hover {
+  cursor: pointer;
+  background-color: rgb(228, 228, 249);
+  border-radius: 7px;
+}
+
+.section__navSide_networks_post img {
+  width: 27px;
+}
+
+@media (max-width: 767px) and (min-width: 0px) {
+  #navSide_post.openNavPost {
+    display: block;
+  }
+}
+.lod_in_log {
+  background: none;
+  border: none;
+  font-weight: lighter;
+  width: 5rem;
+}
+
+.lod_in_log:hover {
+  background-color: rgb(234, 234, 255);
+  text-decoration: underline;
+  border-radius: 12%;
+  color: rgb(104, 104, 252);
+}
+
+.create_post_log {
+  width: 9rem;
+}
+
 .all-icons a:hover {
   background-color: #f8f9fa;
   border-radius: 0.5rem;
@@ -618,6 +768,16 @@ body {
   font-size: 14px;
 }
 
-.post-card .card:nth-child(1) {
+.cardList:not(:first-of-type) .imgList {
   display: none;
+}
+
+.textPointer {
+  cursor: pointer;
+}
+
+.relevantButtonStyle:hover {
+  background-color: white;
+  color: #3b49df;
+  border: thin solid 3px lightgrey;
 }/*# sourceMappingURL=style_main.css.map */

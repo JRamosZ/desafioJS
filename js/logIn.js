@@ -1,4 +1,4 @@
-const BASE_URL = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com/'
+const BASE_URL3 = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com/'
 
 let emailInput = document.getElementById('userEmail')
 let passwordInput = document.getElementById('userPassword')
@@ -17,7 +17,7 @@ const checkForUsers = async () => {
         return
     }
     
-    let response = await fetch(`${BASE_URL}/users/.json`)
+    let response = await fetch(`${BASE_URL3}/users/.json`)
     let data = await response.json()
     for (let item in data) {
         if (data[item]['userEmail'] === emailInput.value && data[item]['userPassword'] === passwordInput.value) {
@@ -28,7 +28,6 @@ const checkForUsers = async () => {
     alert('Correo o Contraseña incorrectos')
 }
 
-console.log(logInButton)
 logInButton.addEventListener('click', event => {
     checkForUsers()
 })

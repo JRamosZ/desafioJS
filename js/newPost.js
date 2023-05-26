@@ -1,3 +1,5 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 const BASE_URL = 'https://desafiojs-1edc9-default-rtdb.firebaseio.com'
 let userId = ''
 
@@ -52,9 +54,11 @@ const getNewPostInputs = async() => {
     let relevance = Math.ceil(Math.random() * 10)
     post['postRelevance'] = relevance
 
+
     let userKey = getUserId()
     let data = await getUserData(userKey)
     post['postAuthor'] = `${data.userName} ${data.userLastname}`
+    post['postAuthorId'] = userKey
     console.log(post)
     return post
 }
@@ -75,7 +79,7 @@ publishButton.addEventListener('click', async event => {
     let post = await getNewPostInputs()
     post ? saveNewPost(post) : null
     alert('Post guardado con éxito')
-    window.location.replace(`./index.html?userId=${userId}`)
+    window.location.replace(`../views/index.html?userId=${userId}`)
 })
 
 const getUserId = () => {
@@ -90,3 +94,15 @@ const getUserData = async (userId) => {
     console.log(data)
     return data
 }
+
+let indexButton = document.getElementById('indexButton')
+indexButton.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+let closeNewPost = document.getElementById('closeNewPost')
+closeNewPost.addEventListener('click', () => {
+    window.location.replace(`index.html?userId=${userId}`)
+})
+
+getUserId()
