@@ -39,6 +39,8 @@ const starterFunction = async () => {
   await getAllPosts()
   await insertAutorData()
   printAllPostsRelevant("postCard")
+  searchFilter(".card-filter",".cardList")
+  getRelevantLatest()
 }
 
 starterFunction()
@@ -213,22 +215,18 @@ relevantButton.addEventListener('click', event => {
 
 
 const printAllPostsTop = async(listtId) => {
-  let postList = allPosts.slice()
+  let topList = allPosts.slice()
   let list = document.getElementById(listtId)
-  postList.sort(function(a, b) {
+  topList.sort(function(a, b) {
     return a.postReadTime - b.postReadTime
   })
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  for( let i = 0; i < postList.length; i++){
-    let card = createCard(postList[i])
+  for( let i = 0; i < topList.length; i++){
+    let card = createCard(topList[i])
     list.appendChild(card)
   }
-  /*postList.forEach (async (item) => {
-    let card = await createCard(item, item.key)
-    list.appendChild(card)
-  })*/
 }
 
 let topButton = document.getElementById('topButton')
@@ -253,24 +251,30 @@ const searchFilter = (input, selector)=>{
 
 }
 
-searchFilter(".card-filter",".cardList")
-
 
 // Relevant más reciente
 
-// const relevantLatest = async() => {
-//   let i = 0
-//   let postList2 = []
-//   let allPosts = await getAllPosts()
-//   for (key in allPosts) {
-//     postList2.push(allPosts[key])
-//   }
-//   postList2.forEach(item=> {
-//     console.log(item)
-//   })
-// } 
+const getRelevantLatest = () => {
+  let relevantList = allPosts.slice()
+  relevantList.reverse()
+  relevantList.sort(function(a, b) {
+    return b.postRelevance-a.postRelevance
+  })
+  let relevantLatestImg = document.getElementById('relevantLatestImg')
+  relevantLatestImg.setAttribute('src', relevantList[0]['postImageURL'])
+  let relevantLatestTitle = document.getElementById('relevantLatestTitle')
+  relevantLatestTitle.textContent = relevantList[0]['postTitle']
+  relevantLatestTitle.setAttribute('href', `index_post.html?userId=${userId}&postId=${relevantList[0]['postKey']}`)
+  let relevantLatestContent = document.getElementById('relevantLatestContent')
+  let wordsListToAdd = relevantList[0]['postContent'].slice(0, 160) + '...'
+  relevantLatestContent.textContent = wordsListToAdd
+  let relevantLatestAuthor = document.getElementById('relevantLatestAuthor')
+  relevantLatestAuthor.textContent = relevantList[0]['postAuthor']
 
-// relevantLatest()
+
+  return relevantList[0]
+}
+
 
 // Hashtags
 
