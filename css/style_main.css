@@ -775,3 +775,8 @@ body {
 .textPointer {
   cursor: pointer;
 }/*# sourceMappingURL=style_main.css.map */
+
+.card-img-top {
+  max-height: 450px;
+  object-fit: cover;
+}
